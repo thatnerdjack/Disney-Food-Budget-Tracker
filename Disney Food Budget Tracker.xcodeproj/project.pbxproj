@@ -20,6 +20,7 @@
 		DA08A2A120E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 		DA08A2A220E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 		DA08A2A320E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
+		DAA270D120E4534700FF3EDC /* CreateNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA270D020E4534700FF3EDC /* CreateNewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		DA08A29220E448EC00BA91EB /* Disney_Food_Budget_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disney_Food_Budget_TrackerUITests.swift; sourceTree = "<group>"; };
 		DA08A29420E448EC00BA91EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DAA270D020E4534700FF3EDC /* CreateNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewViewController.swift; sourceTree = "<group>"; };
 		E07F5C87123D14E48183327A /* Pods_Disney_Food_Budget_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disney_Food_Budget_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 			children = (
 				DA08A27220E448EA00BA91EB /* AppDelegate.swift */,
 				DA08A27420E448EA00BA91EB /* ViewController.swift */,
+				DAA270D020E4534700FF3EDC /* CreateNewViewController.swift */,
 				DA08A27620E448EA00BA91EB /* Main.storyboard */,
 				DA08A27920E448EC00BA91EB /* Assets.xcassets */,
 				DA08A27B20E448EC00BA91EB /* LaunchScreen.storyboard */,
@@ -385,6 +388,7 @@
 			files = (
 				DA08A27520E448EA00BA91EB /* ViewController.swift in Sources */,
 				DA08A27320E448EA00BA91EB /* AppDelegate.swift in Sources */,
+				DAA270D120E4534700FF3EDC /* CreateNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
