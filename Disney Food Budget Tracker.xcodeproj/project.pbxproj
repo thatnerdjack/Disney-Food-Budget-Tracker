@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E19B195D275D239023FF41F /* Pods_Disney_Food_Budget_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E07F5C87123D14E48183327A /* Pods_Disney_Food_Budget_Tracker.framework */; };
+		593F763AEA6369FC2FF6A954 /* Pods_Disney_Food_Budget_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4AAE34E7A5D6F27AD9F2EDC /* Pods_Disney_Food_Budget_TrackerUITests.framework */; };
+		8C510153D56E8055880BC13F /* Pods_Disney_Food_Budget_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E75617106B6F02C43CB58F /* Pods_Disney_Food_Budget_TrackerTests.framework */; };
 		DA08A27320E448EA00BA91EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08A27220E448EA00BA91EB /* AppDelegate.swift */; };
 		DA08A27520E448EA00BA91EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08A27420E448EA00BA91EB /* ViewController.swift */; };
 		DA08A27820E448EA00BA91EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA08A27620E448EA00BA91EB /* Main.storyboard */; };
@@ -14,6 +17,9 @@
 		DA08A27D20E448EC00BA91EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA08A27B20E448EC00BA91EB /* LaunchScreen.storyboard */; };
 		DA08A28820E448EC00BA91EB /* Disney_Food_Budget_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08A28720E448EC00BA91EB /* Disney_Food_Budget_TrackerTests.swift */; };
 		DA08A29320E448EC00BA91EB /* Disney_Food_Budget_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08A29220E448EC00BA91EB /* Disney_Food_Budget_TrackerUITests.swift */; };
+		DA08A2A120E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
+		DA08A2A220E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
+		DA08A2A320E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1904E742ADBCC283C9EB95A3 /* Pods-Disney Food Budget TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disney Food Budget TrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disney Food Budget TrackerTests/Pods-Disney Food Budget TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F2DA774E8E2D692D91DCA9C /* Pods-Disney Food Budget TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disney Food Budget TrackerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disney Food Budget TrackerUITests/Pods-Disney Food Budget TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9E9296116340B12F234E08A0 /* Pods-Disney Food Budget TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disney Food Budget TrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disney Food Budget TrackerTests/Pods-Disney Food Budget TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6F80244BF917AF54EDA9014 /* Pods-Disney Food Budget TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disney Food Budget TrackerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disney Food Budget TrackerUITests/Pods-Disney Food Budget TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0E9D21D303598A2E0CFCC34 /* Pods-Disney Food Budget Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disney Food Budget Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Disney Food Budget Tracker/Pods-Disney Food Budget Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		B3E75617106B6F02C43CB58F /* Pods_Disney_Food_Budget_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disney_Food_Budget_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4AAE34E7A5D6F27AD9F2EDC /* Pods_Disney_Food_Budget_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disney_Food_Budget_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C86581E2A954192572A55F /* Pods-Disney Food Budget Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Disney Food Budget Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Disney Food Budget Tracker/Pods-Disney Food Budget Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		DA08A26F20E448EA00BA91EB /* Disney Food Budget Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Disney Food Budget Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA08A27220E448EA00BA91EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA08A27420E448EA00BA91EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +61,8 @@
 		DA08A28E20E448EC00BA91EB /* Disney Food Budget TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Disney Food Budget TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA08A29220E448EC00BA91EB /* Disney_Food_Budget_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disney_Food_Budget_TrackerUITests.swift; sourceTree = "<group>"; };
 		DA08A29420E448EC00BA91EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E07F5C87123D14E48183327A /* Pods_Disney_Food_Budget_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disney_Food_Budget_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E19B195D275D239023FF41F /* Pods_Disney_Food_Budget_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C510153D56E8055880BC13F /* Pods_Disney_Food_Budget_TrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593F763AEA6369FC2FF6A954 /* Pods_Disney_Food_Budget_TrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A121B59791773F2F6F41C288 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0E9D21D303598A2E0CFCC34 /* Pods-Disney Food Budget Tracker.debug.xcconfig */,
+				D8C86581E2A954192572A55F /* Pods-Disney Food Budget Tracker.release.xcconfig */,
+				9E9296116340B12F234E08A0 /* Pods-Disney Food Budget TrackerTests.debug.xcconfig */,
+				1904E742ADBCC283C9EB95A3 /* Pods-Disney Food Budget TrackerTests.release.xcconfig */,
+				A6F80244BF917AF54EDA9014 /* Pods-Disney Food Budget TrackerUITests.debug.xcconfig */,
+				7F2DA774E8E2D692D91DCA9C /* Pods-Disney Food Budget TrackerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CFBA478DE28D43951ECF9887 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E07F5C87123D14E48183327A /* Pods_Disney_Food_Budget_Tracker.framework */,
+				B3E75617106B6F02C43CB58F /* Pods_Disney_Food_Budget_TrackerTests.framework */,
+				D4AAE34E7A5D6F27AD9F2EDC /* Pods_Disney_Food_Budget_TrackerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA08A26620E448EA00BA91EB = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +123,8 @@
 				DA08A28620E448EC00BA91EB /* Disney Food Budget TrackerTests */,
 				DA08A29120E448EC00BA91EB /* Disney Food Budget TrackerUITests */,
 				DA08A27020E448EA00BA91EB /* Products */,
+				A121B59791773F2F6F41C288 /* Pods */,
+				CFBA478DE28D43951ECF9887 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +147,7 @@
 				DA08A27920E448EC00BA91EB /* Assets.xcassets */,
 				DA08A27B20E448EC00BA91EB /* LaunchScreen.storyboard */,
 				DA08A27E20E448EC00BA91EB /* Info.plist */,
+				DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */,
 			);
 			path = "Disney Food Budget Tracker";
 			sourceTree = "<group>";
@@ -132,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA08A29720E448EC00BA91EB /* Build configuration list for PBXNativeTarget "Disney Food Budget Tracker" */;
 			buildPhases = (
+				45317E8A79062B15525F2690 /* [CP] Check Pods Manifest.lock */,
 				DA08A26B20E448EA00BA91EB /* Sources */,
 				DA08A26C20E448EA00BA91EB /* Frameworks */,
 				DA08A26D20E448EA00BA91EB /* Resources */,
+				06A4EA14C41682DECF3424BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA08A29A20E448EC00BA91EB /* Build configuration list for PBXNativeTarget "Disney Food Budget TrackerTests" */;
 			buildPhases = (
+				83CF741BFB3A599D9939B508 /* [CP] Check Pods Manifest.lock */,
 				DA08A27F20E448EC00BA91EB /* Sources */,
 				DA08A28020E448EC00BA91EB /* Frameworks */,
 				DA08A28120E448EC00BA91EB /* Resources */,
@@ -167,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA08A29D20E448EC00BA91EB /* Build configuration list for PBXNativeTarget "Disney Food Budget TrackerUITests" */;
 			buildPhases = (
+				B42083B4896B0C85E16D3C26 /* [CP] Check Pods Manifest.lock */,
 				DA08A28A20E448EC00BA91EB /* Sources */,
 				DA08A28B20E448EC00BA91EB /* Frameworks */,
 				DA08A28C20E448EC00BA91EB /* Resources */,
@@ -230,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA08A27D20E448EC00BA91EB /* LaunchScreen.storyboard in Resources */,
+				DA08A2A120E449C600BA91EB /* GoogleService-Info.plist in Resources */,
 				DA08A27A20E448EC00BA91EB /* Assets.xcassets in Resources */,
 				DA08A27820E448EA00BA91EB /* Main.storyboard in Resources */,
 			);
@@ -239,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA08A2A220E449C600BA91EB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,10 +297,86 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA08A2A320E449C600BA91EB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06A4EA14C41682DECF3424BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Disney Food Budget Tracker/Pods-Disney Food Budget Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Disney Food Budget Tracker/Pods-Disney Food Budget Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45317E8A79062B15525F2690 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Disney Food Budget Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83CF741BFB3A599D9939B508 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Disney Food Budget TrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B42083B4896B0C85E16D3C26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Disney Food Budget TrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA08A26B20E448EA00BA91EB /* Sources */ = {
@@ -428,6 +555,7 @@
 		};
 		DA08A29820E448EC00BA91EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0E9D21D303598A2E0CFCC34 /* Pods-Disney Food Budget Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,12 +568,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.thatnerdjack.Disney-Food-Budget-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DA08A29920E448EC00BA91EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8C86581E2A954192572A55F /* Pods-Disney Food Budget Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,12 +587,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.thatnerdjack.Disney-Food-Budget-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		DA08A29B20E448EC00BA91EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E9296116340B12F234E08A0 /* Pods-Disney Food Budget TrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +615,7 @@
 		};
 		DA08A29C20E448EC00BA91EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1904E742ADBCC283C9EB95A3 /* Pods-Disney Food Budget TrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +637,7 @@
 		};
 		DA08A29E20E448EC00BA91EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6F80244BF917AF54EDA9014 /* Pods-Disney Food Budget TrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +658,7 @@
 		};
 		DA08A29F20E448EC00BA91EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F2DA774E8E2D692D91DCA9C /* Pods-Disney Food Budget TrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
