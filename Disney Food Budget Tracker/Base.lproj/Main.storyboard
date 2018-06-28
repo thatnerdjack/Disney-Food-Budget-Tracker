@@ -89,20 +89,17 @@
                                     <action selector="checkInDateFieldEdit:" destination="MNB-tP-JPk" eventType="editingDidBegin" id="p68-zk-4w8"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check Out Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQM-tG-eqf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of Nights" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQM-tG-eqf">
                                 <rect key="frame" x="50" y="343.5" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="checkOutDateFieldEdit:" destination="MNB-tP-JPk" eventType="editingDidBegin" id="53k-FQ-Fhp"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Daily Food Budget" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-Wc-fKl">
                                 <rect key="frame" x="50" y="398.5" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Trip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SjE-TA-l6g">
                                 <rect key="frame" x="50" y="238.5" width="275" height="30"/>
@@ -137,8 +134,8 @@
                     </view>
                     <connections>
                         <outlet property="checkInDateField" destination="A3g-ZF-Lgw" id="5kg-9f-fTR"/>
-                        <outlet property="checkOutDateField" destination="eQM-tG-eqf" id="8Bp-aC-LHp"/>
                         <outlet property="foodBudgetField" destination="UZu-Wc-fKl" id="kuJ-xU-kSk"/>
+                        <outlet property="numNightsField" destination="eQM-tG-eqf" id="8AP-Jt-udA"/>
                         <outlet property="tripNameField" destination="SjE-TA-l6g" id="OhH-P7-ik8"/>
                         <segue destination="SbU-jt-2UL" kind="show" identifier="newToDashboard" id="Ccy-BT-QMV"/>
                     </connections>

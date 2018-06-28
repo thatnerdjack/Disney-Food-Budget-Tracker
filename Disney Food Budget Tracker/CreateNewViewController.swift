@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateNewViewController: UIViewController {
     
     @IBOutlet weak var tripNameField: UITextField!
     @IBOutlet weak var checkInDateField: UITextField!
-    @IBOutlet weak var checkOutDateField: UITextField!
+    @IBOutlet weak var numNightsField: UITextField!
     @IBOutlet weak var foodBudgetField: UITextField!
+    
+    var checkInDate = Date.distantPast
+    
+    var ref : DatabaseReference! = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +38,6 @@ class CreateNewViewController: UIViewController {
         datePickerView.addTarget(self, action: #selector(checkInDatePickerChanged(datePicker:)), for: .valueChanged)
     }
     
-    @IBAction func checkOutDateFieldEdit(_ sender: UITextField) {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePickerMode.date
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(checkOutDatePickerChanged(datePicker:)), for: .valueChanged)
-    }
-    
     @objc func checkInDatePickerChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -47,19 +45,28 @@ class CreateNewViewController: UIViewController {
         checkInDateField.text = dateFormatter.string(from: datePicker.date)
     }
 
-    @objc func checkOutDatePickerChanged(datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        checkOutDateField.text = dateFormatter.string(from: datePicker.date)
-    }
-
     @IBAction func hitDone(_ sender: Any) {
         performSegue(withIdentifier: "newToDashboard", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //code
+        var tripName = tripNameField.text
+        var checkInDateString = checkInDateField.text
+        var numNights = Int(numNightsField.text!)!
+        var budget = Int(foodBudgetField.text!)
+        
+        var tripRef = ref.child("trips/\(tripName)")
+        
+        for i in 0..<numNights {
+            var dateInSeconds = checkInDate.addingTimeInterval(86400)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            var dateString = dateFormatter.string(from: dateInSeconds)
+            
+            tripRef.child(dateString).setValue(-1)
+        }
     }
     
     /*
