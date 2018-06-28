@@ -59,7 +59,7 @@
         <!--Create New View Controller-->
         <scene sceneID="oVT-nL-fP8">
             <objects>
-                <viewController id="MNB-tP-JPk" customClass="CreateNewViewController" sceneMemberID="viewController">
+                <viewController id="MNB-tP-JPk" customClass="CreateNewViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3R-ig-MCa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +136,10 @@
                         <viewLayoutGuide key="safeArea" id="rVw-Cf-DWT"/>
                     </view>
                     <connections>
+                        <outlet property="checkInDateField" destination="A3g-ZF-Lgw" id="5kg-9f-fTR"/>
+                        <outlet property="checkOutDateField" destination="eQM-tG-eqf" id="8Bp-aC-LHp"/>
+                        <outlet property="foodBudgetField" destination="UZu-Wc-fKl" id="kuJ-xU-kSk"/>
+                        <outlet property="tripNameField" destination="SjE-TA-l6g" id="OhH-P7-ik8"/>
                         <segue destination="SbU-jt-2UL" kind="show" identifier="newToDashboard" id="Ccy-BT-QMV"/>
                     </connections>
                 </viewController>
