@@ -9,7 +9,12 @@
 import UIKit
 
 class CreateNewViewController: UIViewController {
-
+    
+    @IBOutlet weak var tripNameField: UITextField!
+    @IBOutlet weak var checkInDateField: UITextField!
+    @IBOutlet weak var checkOutDateField: UITextField!
+    @IBOutlet weak var foodBudgetField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +26,42 @@ class CreateNewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func checkInDateFieldEdit(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(checkInDatePickerChanged(datePicker:)), for: .valueChanged)
+    }
+    
+    @IBAction func checkOutDateFieldEdit(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(checkOutDatePickerChanged(datePicker:)), for: .valueChanged)
+    }
+    
+    @objc func checkInDatePickerChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        checkInDateField.text = dateFormatter.string(from: datePicker.date)
+    }
 
+    @objc func checkOutDatePickerChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        checkOutDateField.text = dateFormatter.string(from: datePicker.date)
+    }
+
+    @IBAction func hitDone(_ sender: Any) {
+        performSegue(withIdentifier: "newToDashboard", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //code
+    }
+    
     /*
     // MARK: - Navigation
 

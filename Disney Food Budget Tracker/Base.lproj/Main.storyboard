@@ -29,13 +29,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create a new trip"/>
                                 <connections>
-                                    <segue destination="MNB-tP-JPk" kind="show" id="TAT-xk-EfB"/>
+                                    <segue destination="MNB-tP-JPk" kind="show" identifier="splashToNew" id="TAT-xk-EfB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sea-EA-4c0">
                                 <rect key="frame" x="99" y="340.5" width="177" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Enter an existing trip"/>
+                                <connections>
+                                    <segue destination="SbU-jt-2UL" kind="show" id="z07-gE-wmL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,13 +63,103 @@
                     <view key="view" contentMode="scaleToFill" id="U3R-ig-MCa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-xc-2mA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Create New Trip" id="BT1-C7-s6a">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Tey-5j-gou">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="2i2-Uo-cLd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xex-wP-Jx9">
+                                            <connections>
+                                                <action selector="hitDone:" destination="MNB-tP-JPk" id="0Sb-Vp-CId"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check In Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3g-ZF-Lgw">
+                                <rect key="frame" x="50" y="293.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkInDateFieldEdit:" destination="MNB-tP-JPk" eventType="editingDidBegin" id="p68-zk-4w8"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check Out Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eQM-tG-eqf">
+                                <rect key="frame" x="50" y="343.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkOutDateFieldEdit:" destination="MNB-tP-JPk" eventType="editingDidBegin" id="53k-FQ-Fhp"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Daily Food Budget" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-Wc-fKl">
+                                <rect key="frame" x="50" y="398.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Trip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SjE-TA-l6g">
+                                <rect key="frame" x="50" y="238.5" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eQM-tG-eqf" firstAttribute="centerX" secondItem="U3R-ig-MCa" secondAttribute="centerX" id="0na-ED-TaM"/>
+                            <constraint firstItem="rVw-Cf-DWT" firstAttribute="trailing" secondItem="A3g-ZF-Lgw" secondAttribute="trailing" constant="50" id="1SM-NT-ZaV"/>
+                            <constraint firstItem="PfB-xc-2mA" firstAttribute="centerX" secondItem="U3R-ig-MCa" secondAttribute="centerX" id="5ad-56-mmp"/>
+                            <constraint firstItem="rVw-Cf-DWT" firstAttribute="trailing" secondItem="UZu-Wc-fKl" secondAttribute="trailing" constant="50" id="6h6-6O-Chu"/>
+                            <constraint firstItem="SjE-TA-l6g" firstAttribute="leading" secondItem="rVw-Cf-DWT" secondAttribute="leading" constant="50" id="Hcm-78-ino"/>
+                            <constraint firstItem="UZu-Wc-fKl" firstAttribute="top" secondItem="eQM-tG-eqf" secondAttribute="bottom" constant="25" id="I9i-C1-TgZ"/>
+                            <constraint firstItem="PfB-xc-2mA" firstAttribute="leading" secondItem="U3R-ig-MCa" secondAttribute="leading" id="MR3-6a-qjo"/>
+                            <constraint firstItem="A3g-ZF-Lgw" firstAttribute="centerY" secondItem="U3R-ig-MCa" secondAttribute="centerY" constant="-25" id="NOb-gM-ZCk"/>
+                            <constraint firstItem="UZu-Wc-fKl" firstAttribute="centerX" secondItem="U3R-ig-MCa" secondAttribute="centerX" id="OVz-ya-OiX"/>
+                            <constraint firstItem="A3g-ZF-Lgw" firstAttribute="leading" secondItem="rVw-Cf-DWT" secondAttribute="leading" constant="50" id="PBl-fy-ihS"/>
+                            <constraint firstItem="rVw-Cf-DWT" firstAttribute="trailing" secondItem="SjE-TA-l6g" secondAttribute="trailing" constant="50" id="QPP-zX-Io4"/>
+                            <constraint firstItem="UZu-Wc-fKl" firstAttribute="leading" secondItem="rVw-Cf-DWT" secondAttribute="leading" constant="50" id="ZoQ-XE-cqb"/>
+                            <constraint firstItem="A3g-ZF-Lgw" firstAttribute="top" secondItem="SjE-TA-l6g" secondAttribute="bottom" constant="25" id="aC8-Nh-52E"/>
+                            <constraint firstItem="A3g-ZF-Lgw" firstAttribute="centerX" secondItem="U3R-ig-MCa" secondAttribute="centerX" id="bRQ-zH-2Ew"/>
+                            <constraint firstItem="PfB-xc-2mA" firstAttribute="top" secondItem="rVw-Cf-DWT" secondAttribute="top" id="eD4-Iu-sKL"/>
+                            <constraint firstItem="SjE-TA-l6g" firstAttribute="centerX" secondItem="U3R-ig-MCa" secondAttribute="centerX" id="oFu-Hj-2KA"/>
+                            <constraint firstItem="eQM-tG-eqf" firstAttribute="centerY" secondItem="U3R-ig-MCa" secondAttribute="centerY" constant="25" id="ohx-mI-AaU"/>
+                            <constraint firstItem="rVw-Cf-DWT" firstAttribute="trailing" secondItem="eQM-tG-eqf" secondAttribute="trailing" constant="50" id="rHS-hS-rrh"/>
+                            <constraint firstItem="eQM-tG-eqf" firstAttribute="leading" secondItem="rVw-Cf-DWT" secondAttribute="leading" constant="50" id="wVi-er-ThD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rVw-Cf-DWT"/>
                     </view>
+                    <connections>
+                        <segue destination="SbU-jt-2UL" kind="show" identifier="newToDashboard" id="Ccy-BT-QMV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx8-tF-L1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="-699"/>
+            <point key="canvasLocation" x="1484" y="-658"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pyj-5C-9Gj">
+            <objects>
+                <viewController id="SbU-jt-2UL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vxb-dt-WT6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xsN-AU-sBc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBB-10-v35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182" y="0.0"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ccy-BT-QMV"/>
+    </inferredMetricsTieBreakers>
 </document>
