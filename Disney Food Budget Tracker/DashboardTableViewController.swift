@@ -63,6 +63,7 @@ class DashboardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTripID = tripNamesAndIDs[(tableView.cellForRow(at: indexPath)?.textLabel?.text)!]!
+        performSegue(withIdentifier: "dashboardToTrip", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

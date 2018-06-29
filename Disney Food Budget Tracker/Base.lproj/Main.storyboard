@@ -174,9 +174,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="KlI-x1-dso" kind="show" identifier="dashboardToTrip" id="Jcr-Gv-IU1"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -185,6 +182,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZQJ-nK-yT3"/>
+                    <connections>
+                        <segue destination="KlI-x1-dso" kind="show" identifier="dashboardToTrip" id="ckU-eG-0jU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7S-Vt-Wuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

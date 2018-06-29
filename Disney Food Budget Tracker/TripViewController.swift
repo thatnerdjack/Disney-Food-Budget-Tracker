@@ -23,7 +23,9 @@ class TripViewController: UIViewController {
         ref.child("trips/\(tripID)").observeSingleEvent(of: .value, with: { (snapshot) in
             let tripDetails = snapshot.value as? NSDictionary
             //populate table view with days
-        }, withCancel: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         // Do any additional setup after loading the view.
     }
 
