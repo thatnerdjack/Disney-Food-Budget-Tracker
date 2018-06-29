@@ -13,6 +13,8 @@ class DashboardTableViewController: UITableViewController {
     
     var tripNamesAndIDs: Dictionary = [String:String]()
     var tripNamesAndInDates: Dictionary = [String:String]()
+    var selectedTripID = ""
+    
     let ref = Database.database().reference()
 
     override func viewDidLoad() {
@@ -58,11 +60,14 @@ class DashboardTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedTripID = tripNamesAndIDs[(tableView.cellForRow(at: indexPath)?.textLabel?.text)!]!
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TripViewController
-        
-        
+        destination.tripID = selectedTripID
     }
 
 }
