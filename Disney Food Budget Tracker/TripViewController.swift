@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class TripViewController: UIViewController {
     
-    var tripID = ""
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var tripID: String!
+    
+    var ref = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ref.child("trips/\(tripID)").observeSingleEvent(of: .value, with: { (snapshot) in
+            let tripDetails = snapshot.value as? NSDictionary
+            //populate table view with days
+        }, withCancel: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
         // Do any additional setup after loading the view.
     }
 
