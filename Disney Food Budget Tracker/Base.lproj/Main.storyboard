@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="2631" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Trip View Controller-->
         <scene sceneID="RI9-kL-I4a">
             <objects>
-                <viewController id="KlI-x1-dso" sceneMemberID="viewController">
+                <viewController id="KlI-x1-dso" customClass="TripViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oqk-wT-6GT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

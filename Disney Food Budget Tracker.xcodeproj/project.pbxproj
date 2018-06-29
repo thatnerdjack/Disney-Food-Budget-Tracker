@@ -21,6 +21,7 @@
 		DA08A2A220E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 		DA08A2A320E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 		DA59209620E6C43600A0A043 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59209520E6C43600A0A043 /* DashboardTableViewController.swift */; };
+		DA59209820E6E17100A0A043 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA59209720E6E17100A0A043 /* TripViewController.swift */; };
 		DAA270D120E4534700FF3EDC /* CreateNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA270D020E4534700FF3EDC /* CreateNewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		DA08A29420E448EC00BA91EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA59209520E6C43600A0A043 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		DA59209720E6E17100A0A043 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		DAA270D020E4534700FF3EDC /* CreateNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewViewController.swift; sourceTree = "<group>"; };
 		E07F5C87123D14E48183327A /* Pods_Disney_Food_Budget_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Disney_Food_Budget_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				DA08A27420E448EA00BA91EB /* ViewController.swift */,
 				DAA270D020E4534700FF3EDC /* CreateNewViewController.swift */,
 				DA59209520E6C43600A0A043 /* DashboardTableViewController.swift */,
+				DA59209720E6E17100A0A043 /* TripViewController.swift */,
 				DA08A27620E448EA00BA91EB /* Main.storyboard */,
 				DA08A27920E448EC00BA91EB /* Assets.xcassets */,
 				DA08A27B20E448EC00BA91EB /* LaunchScreen.storyboard */,
@@ -390,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA59209620E6C43600A0A043 /* DashboardTableViewController.swift in Sources */,
+				DA59209820E6E17100A0A043 /* TripViewController.swift in Sources */,
 				DA08A27520E448EA00BA91EB /* ViewController.swift in Sources */,
 				DA08A27320E448EA00BA91EB /* AppDelegate.swift in Sources */,
 				DAA270D120E4534700FF3EDC /* CreateNewViewController.swift in Sources */,
