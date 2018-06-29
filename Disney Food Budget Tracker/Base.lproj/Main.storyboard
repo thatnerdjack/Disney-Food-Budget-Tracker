@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1738" y="-685"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Dashboard Table View Controller-->
         <scene sceneID="jRG-BS-fdR">
             <objects>
-                <tableViewController id="lkk-Az-4tu" sceneMemberID="viewController">
+                <tableViewController id="lkk-Az-4tu" customClass="DashboardTableViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ox-bh-D3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +169,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7S-Vt-Wuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823" y="134"/>
+            <point key="canvasLocation" x="2631" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOH-U2-ECR">
