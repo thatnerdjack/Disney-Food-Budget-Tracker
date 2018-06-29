@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Awu-m5-ygn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disney Food Budget Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urv-6l-6Z2">
-                                <rect key="frame" x="42" y="35" width="290.5" height="29"/>
+                                <rect key="frame" x="42" y="79" width="290.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Enter an existing trip"/>
                                 <connections>
-                                    <segue destination="SbU-jt-2UL" kind="show" id="z07-gE-wmL"/>
+                                    <segue destination="lkk-Az-4tu" kind="show" id="0Fw-yJ-15J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,9 +52,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aYA-pR-GZG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="777" y="134"/>
         </scene>
         <!--Create New View Controller-->
         <scene sceneID="oVT-nL-fP8">
@@ -65,14 +67,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-xc-2mA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Create New Trip" id="BT1-C7-s6a">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Tey-5j-gou">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="2i2-Uo-cLd"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xex-wP-Jx9">
                                             <connections>
                                                 <action selector="hitDone:" destination="MNB-tP-JPk" id="0Sb-Vp-CId"/>
@@ -84,6 +81,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check In Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3g-ZF-Lgw">
                                 <rect key="frame" x="50" y="293.5" width="275" height="30"/>
                                 <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="checkInDateFieldEdit:" destination="MNB-tP-JPk" eventType="editingDidBegin" id="p68-zk-4w8"/>
@@ -137,30 +135,62 @@
                         <outlet property="foodBudgetField" destination="UZu-Wc-fKl" id="kuJ-xU-kSk"/>
                         <outlet property="numNightsField" destination="eQM-tG-eqf" id="8AP-Jt-udA"/>
                         <outlet property="tripNameField" destination="SjE-TA-l6g" id="OhH-P7-ik8"/>
-                        <segue destination="SbU-jt-2UL" kind="show" identifier="newToDashboard" id="Ccy-BT-QMV"/>
+                        <segue destination="lkk-Az-4tu" kind="show" identifier="newToDashboard" id="OVt-kP-Sy9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qx8-tF-L1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="-658"/>
+            <point key="canvasLocation" x="1738" y="-685"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="pyj-5C-9Gj">
+        <!--Table View Controller-->
+        <scene sceneID="jRG-BS-fdR">
             <objects>
-                <viewController id="SbU-jt-2UL" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vxb-dt-WT6">
+                <tableViewController id="lkk-Az-4tu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ox-bh-D3H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="xsN-AU-sBc"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QBB-10-v35" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9P6-ux-Jwd">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9P6-ux-Jwd" id="PT2-gl-0qI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lkk-Az-4tu" id="Sfg-az-349"/>
+                            <outlet property="delegate" destination="lkk-Az-4tu" id="phs-f4-VOY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ZQJ-nK-yT3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7S-Vt-Wuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182" y="0.0"/>
+            <point key="canvasLocation" x="2823" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BOH-U2-ECR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Awu-m5-ygn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ApK-fV-GhN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JeS-uC-192"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWS-O9-ftI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="134"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ccy-BT-QMV"/>
+        <segue reference="0Fw-yJ-15J"/>
     </inferredMetricsTieBreakers>
 </document>

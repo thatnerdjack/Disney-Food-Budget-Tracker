@@ -40,9 +40,10 @@ class CreateNewViewController: UIViewController {
     
     @objc func checkInDatePickerChanged(datePicker: UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .none
         checkInDateField.text = dateFormatter.string(from: datePicker.date)
+        checkInDate = datePicker.date
     }
 
     @IBAction func hitDone(_ sender: Any) {
@@ -50,33 +51,29 @@ class CreateNewViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var tripName = tripNameField.text
-        var checkInDateString = checkInDateField.text
-        var numNights = Int(numNightsField.text!)!
-        var budget = Int(foodBudgetField.text!)
+        let tripName = tripNameField.text!
+        let numNights = Int(numNightsField.text!)!
+        let budget = Int(foodBudgetField.text!)!
         
-        var tripRef = ref.child("trips/\(tripName)")
+        let tripRef = ref.child("trips").childByAutoId()
+        tripRef.child("TRIP_NAME").setValue(tripName)
+        tripRef.child("TOTAL_BUDGET").setValue(budget*numNights)
         
         for i in 0..<numNights {
-            var dateInSeconds = checkInDate.addingTimeInterval(86400)
+            let advancementNum = Double(86400 * i)
+            let dateInSeconds = checkInDate.addingTimeInterval(advancementNum)
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
+            dateFormatter.dateStyle = .long
             dateFormatter.timeStyle = .none
-            var dateString = dateFormatter.string(from: dateInSeconds)
+            let dateString = dateFormatter.string(from: dateInSeconds)
             
-            tripRef.child(dateString).setValue(-1)
+            tripRef.child("dates/\(dateString)/DAY_BUDGET").setValue(budget)
+            tripRef.child("dates/\(dateString)/Breakfast").setValue(0)
+            tripRef.child("dates/\(dateString)/Lunch").setValue(0)
+            tripRef.child("dates/\(dateString)/Dinner").setValue(0)
+            tripRef.child("dates/\(dateString)/Snacks").setValue(0)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
