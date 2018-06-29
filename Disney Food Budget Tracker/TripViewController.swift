@@ -10,7 +10,7 @@ import UIKit
 
 class TripViewController: UIViewController {
     
-    let tripID = ""
+    var tripID = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
