@@ -11,7 +11,8 @@ import FirebaseDatabase
 
 class DashboardTableViewController: UITableViewController {
     
-    var trips: Dictionary = [String:String]()
+    var tripNamesAndIDs: Dictionary = [String:String]()
+    var tripNamesAndInDates: Dictionary = [String:String]()
     let ref = Database.database().reference()
 
     override func viewDidLoad() {
@@ -20,9 +21,14 @@ class DashboardTableViewController: UITableViewController {
         ref.child("trips").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             for key in value! {
-                print(key.key)
-                print(key.value)
+                let tripIDString: String = key.key as! String
+                let tripDetails = key.value as? NSDictionary
+                let nameAsString: String = (tripDetails?["TRIP_NAME"] as! String)
+                
+                self.tripNamesAndIDs[nameAsString] = tripIDString
+                self.tripNamesAndInDates[nameAsString] = (tripDetails?["CHECK_IN_DATE"] as! String)
             }
+            self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -36,20 +42,19 @@ class DashboardTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tripNamesAndIDs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
+        let tripsArr = Array(tripNamesAndIDs)
         
-        //pull array of /trips to get array of trips
-        //use indexPath.row to call the correct date
+        cell.textLabel?.text = tripsArr[indexPath.row].key
+        cell.detailTextLabel?.text = tripNamesAndInDates[tripsArr[indexPath.row].key]
 
         return cell
     }
