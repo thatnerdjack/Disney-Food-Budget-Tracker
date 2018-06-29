@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DashboardTableViewController: UITableViewController {
+    
+    var trips: Dictionary = [String:String]()
+    let ref = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        ref.child("trips").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            for key in value! {
+                print(key.key)
+                print(key.value)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,15 +45,14 @@ class DashboardTableViewController: UITableViewController {
         return 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
+        
+        //pull array of /trips to get array of trips
+        //use indexPath.row to call the correct date
 
         return cell
     }
-    */
 
     /*
     // MARK: - Navigation
