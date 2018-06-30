@@ -246,17 +246,25 @@
                                     <outlet property="delegate" destination="KlI-x1-dso" id="wRk-S8-bG5"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqR-Py-twn">
+                                <rect key="frame" x="10" y="628" width="57" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QbT-eu-neQ" firstAttribute="top" secondItem="MJ0-vl-ikC" secondAttribute="top" constant="10" id="7l1-W8-Vlf"/>
                             <constraint firstItem="MJ0-vl-ikC" firstAttribute="trailing" secondItem="6oz-hi-XNM" secondAttribute="trailing" id="92F-Tg-FNL"/>
                             <constraint firstItem="xw6-f6-nFH" firstAttribute="trailing" secondItem="MJ0-vl-ikC" secondAttribute="trailing" constant="-10" id="9Ep-w2-Cmh"/>
+                            <constraint firstItem="GqR-Py-twn" firstAttribute="leading" secondItem="MJ0-vl-ikC" secondAttribute="leading" constant="10" id="Ac9-sc-Vph"/>
                             <constraint firstItem="6oz-hi-XNM" firstAttribute="top" secondItem="xw6-f6-nFH" secondAttribute="bottom" constant="10" id="Dw8-im-peP"/>
                             <constraint firstItem="QbT-eu-neQ" firstAttribute="leading" secondItem="MJ0-vl-ikC" secondAttribute="leading" constant="10" id="I9k-FS-gfz"/>
                             <constraint firstItem="xw6-f6-nFH" firstAttribute="leading" secondItem="QbT-eu-neQ" secondAttribute="trailing" constant="30" id="ViY-bT-aK6"/>
                             <constraint firstItem="xw6-f6-nFH" firstAttribute="top" secondItem="MJ0-vl-ikC" secondAttribute="top" constant="10" id="W2x-bF-G9T"/>
                             <constraint firstItem="6oz-hi-XNM" firstAttribute="leading" secondItem="MJ0-vl-ikC" secondAttribute="leading" id="XeF-bp-BOT"/>
+                            <constraint firstItem="GqR-Py-twn" firstAttribute="bottom" secondItem="MJ0-vl-ikC" secondAttribute="bottom" constant="-10" id="aoe-K6-CnW"/>
                             <constraint firstItem="6oz-hi-XNM" firstAttribute="centerX" secondItem="oqk-wT-6GT" secondAttribute="centerX" id="bms-RI-hmA"/>
                             <constraint firstItem="MJ0-vl-ikC" firstAttribute="bottom" secondItem="6oz-hi-XNM" secondAttribute="bottom" constant="50" id="yie-zx-BEV"/>
                         </constraints>
@@ -265,6 +273,7 @@
                     <connections>
                         <outlet property="tableView" destination="6oz-hi-XNM" id="q2i-fE-AAt"/>
                         <outlet property="titleLabel" destination="QbT-eu-neQ" id="XKV-8N-jRm"/>
+                        <outlet property="totalRemainingLabel" destination="GqR-Py-twn" id="zvL-Rx-XdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYM-9X-CMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

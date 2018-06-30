@@ -13,6 +13,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalRemainingLabel: UILabel!
     
     var tripID: String!    
     var nightCount = 0
@@ -25,12 +26,13 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         ref.child("trips/\(tripID!)").observeSingleEvent(of: .value, with: { (snapshot) in
             let tripDetails = snapshot.value as! NSDictionary
+            self.titleLabel.text = tripDetails["TRIP_NAME"] as? String
             let dates = tripDetails["dates"] as! NSDictionary
             self.nightCount = dates.count
             
-            for day in dates {
-                let dayName = day.key as! String
-                let dayDetails = day.value as? NSDictionary
+            for days in dates {
+                let dayName = days.key as! String
+                let dayDetails = days.value as? NSDictionary
                 var budget = dayDetails!["DAY_BUDGET"] as? Int
                 
                 let breakfastCost = dayDetails!["Breakfast"] as? Int
@@ -42,6 +44,13 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 self.datesAndBudgets[dayName] = budget
             }
+            
+            var moneyRemaining = 0
+            for days in self.datesAndBudgets {
+                moneyRemaining += days.value
+            }
+            self.totalRemainingLabel.text = "Total Remaining: $\(String(moneyRemaining))"
+            
             self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
