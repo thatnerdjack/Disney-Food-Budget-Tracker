@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DayViewController: UIViewController {
     
@@ -16,9 +17,18 @@ class DayViewController: UIViewController {
     @IBOutlet weak var dinnerLabel: UILabel!
     @IBOutlet weak var snacksLabel: UILabel!
     
+    var tripID: String!
+    var dateString: String!
+    var ref = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ref.child("trips/\(tripID)/\(dateString)").observeSingleEvent(of: .value, with: { (snapshot) in
+            let dayDetails = snapshot.value as? NSDictionary
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -28,6 +38,11 @@ class DayViewController: UIViewController {
     }
     
     @IBAction func addMealButton(_ sender: Any) {
+    }
+    
+    func replaceDollarVal(s: String, newDollarAmnt: Int) -> String {
+        let mealString = s.split(separator: "$")[0]
+        return "\(mealString)$\(newDollarAmnt)"
     }
     
     /*
