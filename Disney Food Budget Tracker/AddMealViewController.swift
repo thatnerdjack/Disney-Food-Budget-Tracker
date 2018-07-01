@@ -74,6 +74,9 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         dateField.text = datesArr[row]
     }
     
+    @IBAction func hitDone(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

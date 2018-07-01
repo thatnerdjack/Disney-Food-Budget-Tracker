@@ -314,9 +314,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jY-Uu-0ll">
+                                <rect key="frame" x="142" y="587" width="92" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="addMealButton:" destination="yYd-mz-jAc" eventType="touchUpInside" id="bZL-8n-afX"/>
+                                    <action selector="hitDone:" destination="Cb7-bM-tr5" eventType="touchUpInside" id="gQV-S2-AWn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bdA-ZN-tjW" firstAttribute="bottom" secondItem="6jY-Uu-0ll" secondAttribute="bottom" constant="20" id="07E-yD-jYo"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="top" secondItem="d3X-kj-Ltf" secondAttribute="bottom" constant="30" id="2jA-hB-8vb"/>
                             <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="qMD-AN-kZG" secondAttribute="trailing" constant="20" id="8ht-0a-MhC"/>
                             <constraint firstItem="qMD-AN-kZG" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="QnQ-0f-pOT"/>
@@ -325,6 +335,7 @@
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerY" secondItem="XjD-Tf-HJB" secondAttribute="centerY" id="Uta-5e-jrd"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="WFq-X6-t6h"/>
                             <constraint firstItem="qMD-AN-kZG" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="Y2S-yi-cHJ"/>
+                            <constraint firstItem="6jY-Uu-0ll" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="bEz-Fc-qIC"/>
                             <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="Mo2-lB-xrK" secondAttribute="trailing" constant="20" id="fIC-Tb-jTz"/>
                             <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="d3X-kj-Ltf" secondAttribute="trailing" constant="20" id="mjr-Gw-6pz"/>
                             <constraint firstItem="d3X-kj-Ltf" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="sZR-Jh-WfB"/>
