@@ -18,6 +18,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     var tripID: String!    
     var nightCount = 0
     var datesAndBudgets: Dictionary = [String:Int]()
+    var checkInDate: String!
     
     var ref = Database.database().reference()
 
@@ -29,6 +30,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.titleLabel.text = tripDetails["TRIP_NAME"] as? String
             let dates = tripDetails["dates"] as! NSDictionary
             self.nightCount = dates.count
+            self.checkInDate = tripDetails["CHECK_IN_DATE"] as? String
             
             for days in dates {
                 let dayName = days.key as! String
@@ -77,7 +79,22 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         return nightCount
     }
     
-
+    @IBAction func addMealButton(_ sender: Any) {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .none
+        let dateAsString = dateFormatter.string(from: date)
+        
+        if dateAsString > checkInDate {     //swap > to < after testing!!
+            let alert = UIAlertController(title: "It's too early!", message: "Wait until you get there before putting meals in.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            //performSegue
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -211,6 +211,9 @@
                                     <constraint firstAttribute="height" constant="30" id="hdS-eZ-eP0"/>
                                 </constraints>
                                 <state key="normal" title="Add Meal"/>
+                                <connections>
+                                    <action selector="addMealButton:" destination="KlI-x1-dso" eventType="touchUpInside" id="5IY-cx-aY4"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6oz-hi-XNM">
                                 <rect key="frame" x="0.0" y="114" width="375" height="503"/>
@@ -274,11 +277,88 @@
                         <outlet property="tableView" destination="6oz-hi-XNM" id="q2i-fE-AAt"/>
                         <outlet property="titleLabel" destination="QbT-eu-neQ" id="XKV-8N-jRm"/>
                         <outlet property="totalRemainingLabel" destination="GqR-Py-twn" id="zvL-Rx-XdF"/>
+                        <segue destination="yYd-mz-jAc" kind="show" identifier="tripToDay" id="zNN-3W-q4l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYM-9X-CMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3687" y="134"/>
+        </scene>
+        <!--Day View Controller-->
+        <scene sceneID="o8E-gK-hpB">
+            <objects>
+                <viewController id="yYd-mz-jAc" customClass="DayViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p1y-rE-gKL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fH-PF-1ge">
+                                <rect key="frame" x="150" y="94" width="75.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner: $00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1i4-n7-BpY">
+                                <rect key="frame" x="120" y="346.5" width="135" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch: $00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSK-OB-Rrf">
+                                <rect key="frame" x="121.5" y="296.5" width="132" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast: $00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uL1-Ge-q9i">
+                                <rect key="frame" x="107.5" y="247.5" width="160" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snacks: $00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0er-F7-8yE">
+                                <rect key="frame" x="117" y="395.5" width="141" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrh-Qh-CnA">
+                                <rect key="frame" x="106" y="587" width="163" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Add Meal"/>
+                                <connections>
+                                    <action selector="addMealButton:" destination="yYd-mz-jAc" eventType="touchUpInside" id="urs-yp-k1t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FSK-OB-Rrf" firstAttribute="centerX" secondItem="p1y-rE-gKL" secondAttribute="centerX" id="Cnf-Sv-mhi"/>
+                            <constraint firstItem="1i4-n7-BpY" firstAttribute="centerY" secondItem="p1y-rE-gKL" secondAttribute="centerY" constant="25" id="DFc-Fp-mmA"/>
+                            <constraint firstItem="uL1-Ge-q9i" firstAttribute="centerX" secondItem="p1y-rE-gKL" secondAttribute="centerX" id="DHd-sN-unf"/>
+                            <constraint firstItem="4fH-PF-1ge" firstAttribute="centerX" secondItem="p1y-rE-gKL" secondAttribute="centerX" id="KkS-jb-vNl"/>
+                            <constraint firstItem="0er-F7-8yE" firstAttribute="top" secondItem="1i4-n7-BpY" secondAttribute="bottom" constant="25" id="TXX-Fn-tP9"/>
+                            <constraint firstItem="FSK-OB-Rrf" firstAttribute="top" secondItem="uL1-Ge-q9i" secondAttribute="bottom" constant="25" id="UqU-J5-76b"/>
+                            <constraint firstItem="0er-F7-8yE" firstAttribute="centerX" secondItem="p1y-rE-gKL" secondAttribute="centerX" id="bNO-H1-DqA"/>
+                            <constraint firstItem="Vrh-Qh-CnA" firstAttribute="centerX" secondItem="p1y-rE-gKL" secondAttribute="centerX" id="dZx-qG-V5Q"/>
+                            <constraint firstItem="FSK-OB-Rrf" firstAttribute="centerY" secondItem="p1y-rE-gKL" secondAttribute="centerY" constant="-25" id="mWe-76-ser"/>
+                            <constraint firstItem="4fH-PF-1ge" firstAttribute="top" secondItem="Qm2-VT-XrL" secondAttribute="top" constant="30" id="mrL-k9-IbP"/>
+                            <constraint firstItem="1i4-n7-BpY" firstAttribute="centerX" secondItem="p1y-rE-gKL" secondAttribute="centerX" id="oFp-z5-zJ9"/>
+                            <constraint firstItem="Qm2-VT-XrL" firstAttribute="bottom" secondItem="Vrh-Qh-CnA" secondAttribute="bottom" constant="20" id="thS-6R-mXz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qm2-VT-XrL"/>
+                    </view>
+                    <connections>
+                        <outlet property="breakfastLabel" destination="uL1-Ge-q9i" id="Ex6-wW-pwI"/>
+                        <outlet property="dayLabel" destination="4fH-PF-1ge" id="oEc-z1-a5I"/>
+                        <outlet property="dinnerLabel" destination="1i4-n7-BpY" id="Dll-Z7-hVf"/>
+                        <outlet property="lunchLabel" destination="FSK-OB-Rrf" id="hwN-7m-K64"/>
+                        <outlet property="snacksLabel" destination="0er-F7-8yE" id="bkJ-DN-Cgy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chg-jN-gTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4654" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOH-U2-ECR">
@@ -300,6 +380,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0Fw-yJ-15J"/>
+        <segue reference="OVt-kP-Sy9"/>
     </inferredMetricsTieBreakers>
 </document>
