@@ -302,16 +302,41 @@
                                     <segment title="Snack"/>
                                 </segments>
                             </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day of Trip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-kj-Ltf">
+                                <rect key="frame" x="20" y="259.5" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMD-AN-kZG">
+                                <rect key="frame" x="20" y="378" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Mo2-lB-xrK" firstAttribute="top" secondItem="d3X-kj-Ltf" secondAttribute="bottom" constant="30" id="2jA-hB-8vb"/>
+                            <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="qMD-AN-kZG" secondAttribute="trailing" constant="20" id="8ht-0a-MhC"/>
+                            <constraint firstItem="qMD-AN-kZG" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="QnQ-0f-pOT"/>
+                            <constraint firstItem="qMD-AN-kZG" firstAttribute="top" secondItem="Mo2-lB-xrK" secondAttribute="bottom" constant="30" id="RQH-f8-pWs"/>
+                            <constraint firstItem="d3X-kj-Ltf" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="Upi-l6-f5E"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerY" secondItem="XjD-Tf-HJB" secondAttribute="centerY" id="Uta-5e-jrd"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="WFq-X6-t6h"/>
+                            <constraint firstItem="qMD-AN-kZG" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="Y2S-yi-cHJ"/>
                             <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="Mo2-lB-xrK" secondAttribute="trailing" constant="20" id="fIC-Tb-jTz"/>
+                            <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="d3X-kj-Ltf" secondAttribute="trailing" constant="20" id="mjr-Gw-6pz"/>
+                            <constraint firstItem="d3X-kj-Ltf" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="sZR-Jh-WfB"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="yVY-4s-xO5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bdA-ZN-tjW"/>
                     </view>
+                    <connections>
+                        <outlet property="costField" destination="qMD-AN-kZG" id="T2l-JO-kZn"/>
+                        <outlet property="dateField" destination="d3X-kj-Ltf" id="aKe-53-d4H"/>
+                        <outlet property="mealField" destination="Mo2-lB-xrK" id="Qcn-e7-53q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0k-s4-KtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -414,7 +439,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BII-VY-LpG"/>
+        <segue reference="lHP-Ii-3kY"/>
         <segue reference="OVt-kP-Sy9"/>
     </inferredMetricsTieBreakers>
 </document>

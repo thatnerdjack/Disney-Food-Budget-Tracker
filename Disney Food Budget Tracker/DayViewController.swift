@@ -45,6 +45,7 @@ class DayViewController: UIViewController {
     }
     
     @IBAction func addMealButton(_ sender: Any) {
+        performSegue(withIdentifier: "dayToAddMeal", sender: self)
     }
     
     func replaceDollarVal(s: String, newDollarAmnt: Double) -> String {

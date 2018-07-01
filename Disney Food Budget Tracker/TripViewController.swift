@@ -20,6 +20,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     var datesAndBudgets: Dictionary = [String:Double]()
     var checkInDate: String!
     var selectedDay: String!
+    var datesArr: [String]!
     
     var ref = Database.database().reference()
 
@@ -97,15 +98,21 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         } else {
-            //performSegue
+            datesArr = Array(datesAndBudgets.keys)
+            performSegue(withIdentifier: "tripToAddMeal", sender: nil)
         }
     }
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! DayViewController
-        destination.tripID = tripID
-        destination.dateString = selectedDay
+        if segue.identifier == "tripToDay" {
+            let destination = segue.destination as! DayViewController
+            destination.tripID = tripID
+            destination.dateString = selectedDay
+        } else if segue.identifier == "tripToAddMeal" {
+            let destination = segue.destination as! AddMealViewController
+            destination.datesArr = datesArr
+        }
     }
 
 }
