@@ -16,7 +16,8 @@ class CreateNewViewController: UIViewController {
     @IBOutlet weak var numNightsField: UITextField!
     @IBOutlet weak var foodBudgetField: UITextField!
     
-    var checkInDate = Date.distantPast
+    var checkInDate: Date!
+    var checkInDateString: String!
     
     var ref : DatabaseReference! = Database.database().reference()
     
@@ -44,6 +45,7 @@ class CreateNewViewController: UIViewController {
         dateFormatter.timeStyle = .none
         checkInDateField.text = dateFormatter.string(from: datePicker.date)
         checkInDate = datePicker.date
+        checkInDateString = dateFormatter.string(from: datePicker.date)
     }
 
     @IBAction func hitDone(_ sender: Any) {
@@ -58,6 +60,7 @@ class CreateNewViewController: UIViewController {
         let tripRef = ref.child("trips").childByAutoId()
         tripRef.child("TRIP_NAME").setValue(tripName)
         tripRef.child("TOTAL_BUDGET").setValue(budget*numNights)
+        tripRef.child("CHECK_IN_DATE").setValue(checkInDateString)
         
         for i in 0..<numNights {
             let advancementNum = Double(86400 * i)
@@ -69,10 +72,10 @@ class CreateNewViewController: UIViewController {
             let dateString = dateFormatter.string(from: dateInSeconds)
             
             tripRef.child("dates/\(dateString)/DAY_BUDGET").setValue(budget)
-            tripRef.child("dates/\(dateString)/Breakfast").setValue(0)
-            tripRef.child("dates/\(dateString)/Lunch").setValue(0)
-            tripRef.child("dates/\(dateString)/Dinner").setValue(0)
-            tripRef.child("dates/\(dateString)/Snacks").setValue(0)
+            tripRef.child("dates/\(dateString)/Breakfast").setValue(0.00)
+            tripRef.child("dates/\(dateString)/Lunch").setValue(0.00)
+            tripRef.child("dates/\(dateString)/Dinner").setValue(0.00)
+            tripRef.child("dates/\(dateString)/Snacks").setValue(0.00)
         }
     }
 

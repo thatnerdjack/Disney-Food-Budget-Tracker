@@ -17,7 +17,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var tripID: String!    
     var nightCount = 0
-    var datesAndBudgets: Dictionary = [String:Int]()
+    var datesAndBudgets: Dictionary = [String:Double]()
     var checkInDate: String!
     var selectedDay: String!
     
@@ -36,19 +36,19 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             for days in dates {
                 let dayName = days.key as! String
                 let dayDetails = days.value as? NSDictionary
-                var budget = dayDetails!["DAY_BUDGET"] as? Int
+                var budget = dayDetails!["DAY_BUDGET"] as? Double
                 
-                let breakfastCost = dayDetails!["Breakfast"] as? Int
-                let lunchCost = dayDetails!["Lunch"] as? Int
-                let dinnerCost = dayDetails!["Dinner"] as? Int
-                let snacksCost = dayDetails!["Snacks"] as? Int
+                let breakfastCost = dayDetails!["Breakfast"] as? Double
+                let lunchCost = dayDetails!["Lunch"] as? Double
+                let dinnerCost = dayDetails!["Dinner"] as? Double
+                let snacksCost = dayDetails!["Snacks"] as? Double
                 
                 budget = budget! - breakfastCost! - lunchCost! - dinnerCost! - snacksCost!
                 
                 self.datesAndBudgets[dayName] = budget
             }
             
-            var moneyRemaining = 0
+            var moneyRemaining = 0.00
             for days in self.datesAndBudgets {
                 moneyRemaining += days.value
             }
