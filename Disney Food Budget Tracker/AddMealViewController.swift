@@ -19,10 +19,15 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datesArr.sort()
+        print("datesArr: \(datesArr!)")
         
         setuoPickerView()
         dateField.inputView = pickerView
+        
+        if datesArr.count == 1 {
+            dateField.text = datesArr[0]
+            dateField.isEnabled = false
+        }
 
         // Do any additional setup after loading the view.
     }
