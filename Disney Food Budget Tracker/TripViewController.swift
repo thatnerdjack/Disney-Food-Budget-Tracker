@@ -19,6 +19,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     var nightCount = 0
     var datesAndBudgets: Dictionary = [String:Int]()
     var checkInDate: String!
+    var selectedDay: String!
     
     var ref = Database.database().reference()
 
@@ -79,6 +80,11 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         return nightCount
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedDay = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        performSegue(withIdentifier: "tripToDay", sender: self)
+    }
+    
     @IBAction func addMealButton(_ sender: Any) {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -94,15 +100,12 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             //performSegue
         }
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destination as! DayViewController
+        destination.tripID = tripID
+        destination.dateString = selectedDay
     }
-    */
 
 }

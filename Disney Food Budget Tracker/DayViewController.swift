@@ -24,8 +24,15 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.child("trips/\(tripID)/\(dateString)").observeSingleEvent(of: .value, with: { (snapshot) in
+        dayLabel.text = dateString
+        
+        ref.child("trips/\(tripID!)/dates/\(dateString!)").observeSingleEvent(of: .value, with: { (snapshot) in
             let dayDetails = snapshot.value as? NSDictionary
+            
+            self.breakfastLabel.text = self.replaceDollarVal(s: self.breakfastLabel.text!, newDollarAmnt: (dayDetails!["Breakfast"] as? Double)!)
+            self.lunchLabel.text = self.replaceDollarVal(s: self.lunchLabel.text!, newDollarAmnt: (dayDetails!["Lunch"] as? Double)!)
+            self.dinnerLabel.text = self.replaceDollarVal(s: self.dinnerLabel.text!, newDollarAmnt: (dayDetails!["Dinner"] as? Double)!)
+            self.snacksLabel.text = self.replaceDollarVal(s: self.snacksLabel.text!, newDollarAmnt: (dayDetails!["Snacks"] as? Double)!)
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -40,9 +47,10 @@ class DayViewController: UIViewController {
     @IBAction func addMealButton(_ sender: Any) {
     }
     
-    func replaceDollarVal(s: String, newDollarAmnt: Int) -> String {
+    func replaceDollarVal(s: String, newDollarAmnt: Double) -> String {
         let mealString = s.split(separator: "$")[0]
-        return "\(mealString)$\(newDollarAmnt)"
+        let dollarFormatted = String(format: "%.2f", newDollarAmnt)
+        return "\(mealString)$\(dollarFormatted)"
     }
     
     /*
