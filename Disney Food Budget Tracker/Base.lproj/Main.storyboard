@@ -278,11 +278,44 @@
                         <outlet property="titleLabel" destination="QbT-eu-neQ" id="XKV-8N-jRm"/>
                         <outlet property="totalRemainingLabel" destination="GqR-Py-twn" id="zvL-Rx-XdF"/>
                         <segue destination="yYd-mz-jAc" kind="show" identifier="tripToDay" id="zNN-3W-q4l"/>
+                        <segue destination="Cb7-bM-tr5" kind="show" identifier="tripToAddMeal" id="lHP-Ii-3kY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYM-9X-CMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3687" y="134"/>
+        </scene>
+        <!--Add Meal View Controller-->
+        <scene sceneID="58a-c1-fl5">
+            <objects>
+                <viewController id="Cb7-bM-tr5" customClass="AddMealViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XjD-Tf-HJB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Mo2-lB-xrK">
+                                <rect key="frame" x="20" y="319.5" width="335" height="29"/>
+                                <segments>
+                                    <segment title="Breakfast"/>
+                                    <segment title="Lunch"/>
+                                    <segment title="Dinner"/>
+                                    <segment title="Snack"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerY" secondItem="XjD-Tf-HJB" secondAttribute="centerY" id="Uta-5e-jrd"/>
+                            <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="WFq-X6-t6h"/>
+                            <constraint firstItem="bdA-ZN-tjW" firstAttribute="trailing" secondItem="Mo2-lB-xrK" secondAttribute="trailing" constant="20" id="fIC-Tb-jTz"/>
+                            <constraint firstItem="Mo2-lB-xrK" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="yVY-4s-xO5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bdA-ZN-tjW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x0k-s4-KtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4654" y="-623"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="o8E-gK-hpB">
@@ -354,6 +387,7 @@
                         <outlet property="dinnerLabel" destination="1i4-n7-BpY" id="Dll-Z7-hVf"/>
                         <outlet property="lunchLabel" destination="FSK-OB-Rrf" id="hwN-7m-K64"/>
                         <outlet property="snacksLabel" destination="0er-F7-8yE" id="bkJ-DN-Cgy"/>
+                        <segue destination="Cb7-bM-tr5" kind="show" identifier="dayToAddMeal" id="BII-VY-LpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chg-jN-gTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -380,6 +414,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BII-VY-LpG"/>
         <segue reference="OVt-kP-Sy9"/>
     </inferredMetricsTieBreakers>
 </document>
