@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -16,6 +17,11 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     var datesArr: [String]!
     var pickerView: UIPickerView!
+    var tripID: String!
+    var dateString: String!
+    var mealString: String!
+    
+    let ref = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,7 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         if datesArr.count == 1 {
             dateField.text = datesArr[0]
             dateField.isEnabled = false
+            dateString = datesArr[0]
         }
 
         // Do any additional setup after loading the view.
@@ -75,6 +82,45 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     @IBAction func hitDone(_ sender: Any) {
+        if checkForErrors() {
+            return
+        } else {
+            ref.child("trips/\(tripID)/dates/\(dateString)/\(mealString)").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+                var currentSpent = currentData.value as? Double
+                let costDouble = Double(self.costField.text!)
+                
+                currentSpent = costDouble
+                currentData.value = currentSpent
+                
+                return TransactionResult.success(withValue: currentData)
+                //WHAT DOES THE OUTEWR BLOCK DOO???????????????????
+            }) { (error, committed, snapshot) in
+                <#code#>
+            }
+        }
+    }
+    
+    func checkForErrors() -> Bool {
+        let alert = UIAlertController(title: "Error in meal details", message: "You need to fill out all fields!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        if dateField.text == nil {
+            print("fail datefield")
+            self.present(alert, animated: true)
+            return true
+        }
+        
+        if mealField.selectedSegmentIndex == -1 {
+            self.present(alert, animated: true)
+            return true
+        } else {
+            mealString = mealField.titleForSegment(at: mealField.selectedSegmentIndex)
+        }
+        
+        if costField.text == nil {
+            self.present(alert, animated: true)
+            return true
+        }
+        return false
     }
     
     /*

@@ -299,7 +299,7 @@
                                     <segment title="Breakfast"/>
                                     <segment title="Lunch"/>
                                     <segment title="Dinner"/>
-                                    <segment title="Snack"/>
+                                    <segment title="Snacks"/>
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day of Trip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-kj-Ltf">

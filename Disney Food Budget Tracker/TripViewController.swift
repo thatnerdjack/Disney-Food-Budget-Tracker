@@ -112,6 +112,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if segue.identifier == "tripToAddMeal" {
             let destination = segue.destination as! AddMealViewController
             destination.datesArr = datesArr.sorted()
+            destination.tripID = tripID
         }
     }
 

@@ -58,6 +58,7 @@ class DayViewController: UIViewController {
         if segue.identifier == "dayToAddMeal" {
             let destination = segue.destination as! AddMealViewController
             destination.datesArr = [dateString]
+            destination.tripID = tripID
         }
     }
 
