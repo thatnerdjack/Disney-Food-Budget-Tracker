@@ -109,7 +109,6 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tripToDay" {
             let destination = segue.destination as! DayViewController

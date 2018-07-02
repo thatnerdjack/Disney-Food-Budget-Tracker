@@ -40,8 +40,34 @@ class DashboardTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
+    
+    func confirmTripDelete(tripName: String) {
+        let alert = UIAlertController(title: "Are you sure you want to delete this trip?", message: "Type yes to confirm.", preferredStyle: .alert)
+        
+        let typeAction = UIAlertAction(title: "Enter confirmation", style: .destructive) { (alertAction) in
+            let textField = alert.textFields![0] as UITextField
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "WARNING: DELETE IS PERMENANT"
+        }
+        
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: "Delete", style: .destructive) { (alertAction) in
+            let confirmationText = alert.textFields![0].text
+            if confirmationText?.lowercased() == "yes" {
+                let tripID = self.tripNamesAndIDs[tripName]
+                self.tripNamesAndIDs.remove(at: self.tripNamesAndIDs.index(forKey: tripName)!)
+                self.tripNamesAndInDates.remove(at: self.tripNamesAndInDates.index(forKey: tripName)!)
+                self.ref.child("trips/\(tripID!)").removeValue()
+                self.tableView.reloadData()
+            }
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        
+        self.present(alert, animated: true)
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -64,6 +90,16 @@ class DashboardTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedTripID = tripNamesAndIDs[(tableView.cellForRow(at: indexPath)?.textLabel?.text)!]!
         performSegue(withIdentifier: "dashboardToTrip", sender: self)
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            confirmTripDelete(tripName: (tableView.cellForRow(at: indexPath)?.textLabel?.text)!)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
