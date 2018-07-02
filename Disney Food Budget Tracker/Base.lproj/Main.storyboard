@@ -347,6 +347,7 @@
                         <outlet property="costField" destination="qMD-AN-kZG" id="T2l-JO-kZn"/>
                         <outlet property="dateField" destination="d3X-kj-Ltf" id="aKe-53-d4H"/>
                         <outlet property="mealField" destination="Mo2-lB-xrK" id="Qcn-e7-53q"/>
+                        <segue destination="yYd-mz-jAc" kind="show" identifier="addMealToDay" id="cet-Mo-1ih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0k-s4-KtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +363,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fH-PF-1ge">
-                                <rect key="frame" x="150" y="94" width="75.5" height="38.5"/>
+                                <rect key="frame" x="150" y="50" width="75.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -428,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chg-jN-gTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4654" y="134"/>
+            <point key="canvasLocation" x="5354" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOH-U2-ECR">
@@ -450,6 +451,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="cet-Mo-1ih"/>
         <segue reference="BII-VY-LpG"/>
         <segue reference="OVt-kP-Sy9"/>
     </inferredMetricsTieBreakers>

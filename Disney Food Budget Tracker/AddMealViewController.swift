@@ -90,13 +90,15 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
                 if var currentSpent = currentData.value as? Double {
                     currentSpent += costDouble!
                     currentData.value = currentSpent
-                
                     return TransactionResult.success(withValue: currentData)
                 }
                 return TransactionResult.success(withValue: currentData)
             }) { (error, committed, snapshot) in
                 if (error != nil) {
                     print(error?.localizedDescription)
+                }
+                if committed {
+                    self.performSegue(withIdentifier: "addMealToDay", sender: self)
                 }
             }
         }
@@ -125,14 +127,12 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         return false
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addMealToDay" {
+            let destination = segue.destination as! DayViewController
+            destination.tripID = tripID
+            destination.dateString = dateString
+        }
     }
-    */
 
 }
