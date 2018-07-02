@@ -85,17 +85,19 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         if checkForErrors() {
             return
         } else {
-            ref.child("trips/\(tripID)/dates/\(dateString)/\(mealString)").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-                var currentSpent = currentData.value as? Double
-                let costDouble = Double(self.costField.text!)
+            let costDouble = Double(self.costField.text!)
+            ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+                if var currentSpent = currentData.value as? Double {
+                    currentSpent += costDouble!
+                    currentData.value = currentSpent
                 
-                currentSpent = costDouble
-                currentData.value = currentSpent
-                
+                    return TransactionResult.success(withValue: currentData)
+                }
                 return TransactionResult.success(withValue: currentData)
-                //WHAT DOES THE OUTEWR BLOCK DOO???????????????????
             }) { (error, committed, snapshot) in
-                <#code#>
+                if (error != nil) {
+                    print(error?.localizedDescription)
+                }
             }
         }
     }
