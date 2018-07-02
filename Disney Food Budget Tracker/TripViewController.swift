@@ -53,13 +53,19 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             for days in self.datesAndBudgets {
                 moneyRemaining += days.value
             }
-            self.totalRemainingLabel.text = "Total Remaining: $\(String(moneyRemaining))"
+            self.totalRemainingLabel.text = "Total Remaining: $\(String(format: "%.2f", moneyRemaining))"
             
             self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if tableView.indexPathForSelectedRow != nil {
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +78,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         let datesAndBudgetsArr = Array(datesAndBudgets).sorted(by: <)
         
         cell.textLabel?.text = datesAndBudgetsArr[indexPath.row].key
-        cell.detailTextLabel?.text = String(datesAndBudgetsArr[indexPath.row].value)
+        cell.detailTextLabel?.text = "$\(String(format: "%.2f", datesAndBudgetsArr[indexPath.row].value))"
         
         return cell
     }
