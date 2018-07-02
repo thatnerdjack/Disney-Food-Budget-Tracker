@@ -200,6 +200,7 @@
 				DA08A26C20E448EA00BA91EB /* Frameworks */,
 				DA08A26D20E448EA00BA91EB /* Resources */,
 				06A4EA14C41682DECF3424BE /* [CP] Embed Pods Frameworks */,
+				DADA8BCD20E9CC8A008E59DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -394,6 +395,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DADA8BCD20E9CC8A008E59DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"/Users/jackdoherty/Documents/Developer/personal-projects/disneyFoodBudgetTracker/Disney Food Budget Tracker/Disney Food Budget Tracker/Info.plist\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"/Users/jackdoherty/Documents/Developer/personal-projects/disneyFoodBudgetTracker/Disney Food Budget Tracker/Disney Food Budget Tracker/Info.plist\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -4,3 +4,4 @@ TODO
 2. somehow modify what was spent... maybe instead of adding to a continuous sum we put in each entry as a UID child under the meal
 3. pull up to refresh dashboard and trip
 4. override back button to go where it's supposed to
+5. ya can't see all the fields in create new....
