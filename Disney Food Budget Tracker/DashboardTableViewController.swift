@@ -20,6 +20,8 @@ class DashboardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(self.backToInitial(sender:)))
+        
         ref.child("trips").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             for key in value! {
@@ -39,6 +41,10 @@ class DashboardTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func backToInitial(sender: AnyObject) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func confirmTripDelete(tripName: String) {

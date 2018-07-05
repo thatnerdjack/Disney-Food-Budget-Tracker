@@ -92,7 +92,25 @@ class CreateNewViewController: UIViewController {
     }
 
     @IBAction func hitDone(_ sender: Any) {
-        performSegue(withIdentifier: "newToDashboard", sender: self)
+        if checkForErrors() == true {
+            let alert = UIAlertController(title: "Trip Create Error", message: "Please ensure all fields are filled out properly.", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true)
+        } else {
+            performSegue(withIdentifier: "newToDashboard", sender: self)
+        }
+    }
+    
+    func checkForErrors() -> Bool {
+        if tripNameField.text == "" || checkInDateField.text == "" || numNightsField.text == "" || foodBudgetField.text == "" {
+            return true
+        }
+        
+        if Int(numNightsField.text!)! < 1 || Double(foodBudgetField.text!)! < 0.01 {
+            return true
+        }
+        return false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
