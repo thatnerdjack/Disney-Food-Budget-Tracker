@@ -4,3 +4,7 @@ TODO
 5. prevent multiple trips from having the same name... messes up the dictionary w/ IDs
 6. add ability to upload picture of reciept
 7. sort dashboard by check in date
+
+add-meal-v2 branch:
+1. total up $$ spent with new system (let's try adapting it)
+2. show details screen?
