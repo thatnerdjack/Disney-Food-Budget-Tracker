@@ -2,3 +2,5 @@ TODO
 
 2. somehow modify what was spent... maybe instead of adding to a continuous sum we put in each entry as a UID child under the meal
 5. prevent multiple trips from having the same name... messes up the dictionary w/ IDs
+6. add ability to upload picture of reciept
+7. sort dashboard by check in date
