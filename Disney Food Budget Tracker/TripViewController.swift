@@ -21,12 +21,37 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     var checkInDate: String!
     var selectedDay: String!
     var datesArr: [String]!
+    let refreshControl = UIRefreshControl()
     
     var ref = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
 
+        getData()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if tableView.indexPathForSelectedRow != nil {
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: false)
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func getData() {
         ref.child("trips/\(tripID!)").observeSingleEvent(of: .value, with: { (snapshot) in
             let tripDetails = snapshot.value as! NSDictionary
             self.titleLabel.text = tripDetails["TRIP_NAME"] as? String
@@ -56,21 +81,10 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.totalRemainingLabel.text = "Total Remaining: $\(String(format: "%.2f", moneyRemaining))"
             
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }) { (error) in
             print(error.localizedDescription)
         }
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if tableView.indexPathForSelectedRow != nil {
-            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: false)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
