@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import JGProgressHUD
 
 class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -89,8 +90,9 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             return
         } else {
             let cost = Double(self.costField.text!)
-            ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").childByAutoId().child("cost").setValue(cost)
-            ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").childByAutoId().child("receipt").setValue(receiptUuid)
+            let autoRef = ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").childByAutoId()
+            autoRef.child("cost").setValue(cost)
+            autoRef.child("receipt").setValue(receiptUuid)
             self.performSegue(withIdentifier: "addMealToDay", sender: self)
         }
     }
@@ -122,8 +124,17 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         AttachmentHandler.shared.showAttachmentActionSheet(vc: self)
         AttachmentHandler.shared.imagePickedBlock = { (image) in
             self.receiptUuid = UUID().uuidString
-            let receiptRef = self.storageRef.child("receipts/\(self.receiptUuid).jpeg")
-            receiptRef.putData(UIImageJPEGRepresentation(image, 0.8)!)
+            let receiptRef = self.storageRef.child("receipts/\(self.receiptUuid!).jpeg")
+            let uploadTask = receiptRef.putData(UIImageJPEGRepresentation(image, 0.8)!)
+            
+            let hud = JGProgressHUD(style: .dark)
+            hud?.textLabel.text = "Uploading"
+            hud?.show(in: self.view)
+            
+            let _ = uploadTask.observe(.success, handler: { (snapshot) in
+                hud?.dismiss()
+            })
+            
         }
     }
     
