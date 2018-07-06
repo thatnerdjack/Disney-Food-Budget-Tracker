@@ -6,6 +6,7 @@ target 'Disney Food Budget Tracker' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   # Pods for Disney Food Budget Tracker
 
   target 'Disney Food Budget TrackerTests' do
