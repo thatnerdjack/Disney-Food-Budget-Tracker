@@ -133,10 +133,10 @@ class CreateNewViewController: UIViewController {
             let dateString = dateFormatter.string(from: dateInSeconds)
             
             tripRef.child("dates/\(dateString)/DAY_BUDGET").setValue(budget)
-            tripRef.child("dates/\(dateString)/Breakfast").setValue(0.00)
-            tripRef.child("dates/\(dateString)/Lunch").setValue(0.00)
-            tripRef.child("dates/\(dateString)/Dinner").setValue(0.00)
-            tripRef.child("dates/\(dateString)/Snacks").setValue(0.00)
+            tripRef.child("dates/\(dateString)/Breakfast").setValue(-1.00)
+            tripRef.child("dates/\(dateString)/Lunch").setValue(-1.00)
+            tripRef.child("dates/\(dateString)/Dinner").setValue(-1.00)
+            tripRef.child("dates/\(dateString)/Snacks").setValue(-1.00)
         }
     }
 

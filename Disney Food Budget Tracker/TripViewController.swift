@@ -64,12 +64,45 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let dayDetails = days.value as? NSDictionary
                 var budget = dayDetails!["DAY_BUDGET"] as? Double
                 
-                let breakfastCost = dayDetails!["Breakfast"] as? Double
-                let lunchCost = dayDetails!["Lunch"] as? Double
-                let dinnerCost = dayDetails!["Dinner"] as? Double
-                let snacksCost = dayDetails!["Snacks"] as? Double
+                var cost = 0.00
                 
-                budget = budget! - breakfastCost! - lunchCost! - dinnerCost! - snacksCost!
+                if let breakfastDetails = dayDetails!["Breakfast"] as? NSDictionary {
+                    for keys in breakfastDetails {
+                        let values = keys.value as? NSDictionary
+                        if let innerCost = values!["cost"] {
+                            cost += innerCost as! Double
+                        }
+                    }
+                }
+                
+                if let lunchDetails = dayDetails!["Lunch"] as? NSDictionary {
+                    for keys in lunchDetails {
+                        let values = keys.value as? NSDictionary
+                        if let innerCost = values!["cost"] {
+                            cost += innerCost as! Double
+                        }
+                    }
+                }
+                
+                if let dinnerDetails = dayDetails!["Dinner"] as? NSDictionary {
+                    for keys in dinnerDetails {
+                        let values = keys.value as? NSDictionary
+                        if let innerCost = values!["cost"] {
+                            cost += innerCost as! Double
+                        }
+                    }
+                }
+                
+                if let snacksDetails = dayDetails!["Snacks"] as? NSDictionary {
+                    for keys in snacksDetails {
+                        let values = keys.value as? NSDictionary
+                        if let innerCost = values!["cost"] {
+                            cost += innerCost as! Double
+                        }
+                    }
+                }
+                
+                budget = budget! - cost
                 
                 self.datesAndBudgets[dayName] = budget
             }
