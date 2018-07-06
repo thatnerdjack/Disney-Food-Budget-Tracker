@@ -7,6 +7,7 @@ target 'Disney Food Budget Tracker' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'JGProgressHUD'
   # Pods for Disney Food Budget Tracker
 
   target 'Disney Food Budget TrackerTests' do

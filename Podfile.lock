@@ -26,11 +26,13 @@ PODS:
   - "GoogleToolboxForMac/NSData+zlib (2.1.1)":
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - JGProgressHUD (1.4)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - JGProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - FirebaseStorage
     - GoogleToolboxForMac
     - GTMSessionFetcher
+    - JGProgressHUD
 
 SPEC CHECKSUMS:
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
@@ -52,7 +55,8 @@ SPEC CHECKSUMS:
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  JGProgressHUD: 1617b0940cf80bb53e8f7d6f0fd69252ea45d6d4
 
-PODFILE CHECKSUM: a762fb9b488a30536185a364667f53ddafde42c2
+PODFILE CHECKSUM: f66de10ec887725f034e82c64c7e8f6b389206a6
 
 COCOAPODS: 1.5.3
