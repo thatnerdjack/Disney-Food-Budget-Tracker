@@ -21,8 +21,10 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     var tripID: String!
     var dateString: String!
     var mealString: String!
+    var receiptUuid: String!
     
     let ref = Database.database().reference()
+    let storageRef = Storage.storage().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +90,7 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         } else {
             let cost = Double(self.costField.text!)
             ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").childByAutoId().child("cost").setValue(cost)
+            ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").childByAutoId().child("receipt").setValue(receiptUuid)
             self.performSegue(withIdentifier: "addMealToDay", sender: self)
         }
     }
@@ -117,9 +120,11 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     @IBAction func addReceipt(_ sender: Any) {
         AttachmentHandler.shared.showAttachmentActionSheet(vc: self)
-//        AttachmentHandler.shared.imagePickedBlock = { (image) in
-//            //code
-//        }
+        AttachmentHandler.shared.imagePickedBlock = { (image) in
+            self.receiptUuid = UUID().uuidString
+            let receiptRef = self.storageRef.child("receipts/\(self.receiptUuid).jpeg")
+            receiptRef.putData(UIImageJPEGRepresentation(image, 0.8)!)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
