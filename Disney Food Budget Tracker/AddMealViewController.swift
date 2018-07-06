@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -115,7 +116,10 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     @IBAction func addReceipt(_ sender: Any) {
-        //code
+        AttachmentHandler.shared.showAttachmentActionSheet(vc: self)
+//        AttachmentHandler.shared.imagePickedBlock = { (image) in
+//            //code
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
