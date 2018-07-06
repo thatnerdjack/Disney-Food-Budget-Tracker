@@ -85,22 +85,9 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         if checkForErrors() {
             return
         } else {
-            let costDouble = Double(self.costField.text!)
-            ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-                if var currentSpent = currentData.value as? Double {
-                    currentSpent += costDouble!
-                    currentData.value = currentSpent
-                    return TransactionResult.success(withValue: currentData)
-                }
-                return TransactionResult.success(withValue: currentData)
-            }) { (error, committed, snapshot) in
-                if (error != nil) {
-                    print(error?.localizedDescription)
-                }
-                if committed {
-                    self.performSegue(withIdentifier: "addMealToDay", sender: self)
-                }
-            }
+            let cost = Double(self.costField.text!)
+            ref.child("trips/\(tripID!)/dates/\(dateString!)/\(mealString!)").childByAutoId().child("cost").setValue(cost)
+            self.performSegue(withIdentifier: "addMealToDay", sender: self)
         }
     }
     

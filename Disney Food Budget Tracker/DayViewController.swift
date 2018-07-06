@@ -29,10 +29,57 @@ class DayViewController: UIViewController {
         ref.child("trips/\(tripID!)/dates/\(dateString!)").observeSingleEvent(of: .value, with: { (snapshot) in
             let dayDetails = snapshot.value as? NSDictionary
             
-            self.breakfastLabel.text = self.replaceDollarVal(s: self.breakfastLabel.text!, newDollarAmnt: (dayDetails!["Breakfast"] as? Double)!)
-            self.lunchLabel.text = self.replaceDollarVal(s: self.lunchLabel.text!, newDollarAmnt: (dayDetails!["Lunch"] as? Double)!)
-            self.dinnerLabel.text = self.replaceDollarVal(s: self.dinnerLabel.text!, newDollarAmnt: (dayDetails!["Dinner"] as? Double)!)
-            self.snacksLabel.text = self.replaceDollarVal(s: self.snacksLabel.text!, newDollarAmnt: (dayDetails!["Snacks"] as? Double)!)
+            if let breakfastDetails = dayDetails!["Breakfast"] as? NSDictionary {
+                var cost = 0.00
+                for keys in breakfastDetails {
+                    let values = keys.value as? NSDictionary
+                    if let innerCost = values!["cost"] {
+                        cost += innerCost as! Double
+                    }
+                }
+                self.breakfastLabel.text = self.replaceDollarVal(s: self.breakfastLabel.text!, newDollarAmnt: cost)
+            } else {
+                self.breakfastLabel.text = self.replaceDollarVal(s: self.breakfastLabel.text!, newDollarAmnt: 0.0)
+            }
+            
+            if let lunchDetails = dayDetails!["Lunch"] as? NSDictionary {
+                var cost = 0.00
+                for keys in lunchDetails {
+                    let values = keys.value as? NSDictionary
+                    if let innerCost = values!["cost"] {
+                        cost += innerCost as! Double
+                    }
+                }
+                self.lunchLabel.text = self.replaceDollarVal(s: self.lunchLabel.text!, newDollarAmnt: cost)
+            } else {
+                self.lunchLabel.text = self.replaceDollarVal(s: self.lunchLabel.text!, newDollarAmnt: 0.0)
+            }
+            
+            if let dinnerDetails = dayDetails!["Dinner"] as? NSDictionary {
+                var cost = 0.00
+                for keys in dinnerDetails {
+                    let values = keys.value as? NSDictionary
+                    if let innerCost = values!["cost"] {
+                        cost += innerCost as! Double
+                    }
+                }
+                self.dinnerLabel.text = self.replaceDollarVal(s: self.dinnerLabel.text!, newDollarAmnt: cost)
+            } else {
+                self.dinnerLabel.text = self.replaceDollarVal(s: self.dinnerLabel.text!, newDollarAmnt: 0.0)
+            }
+            
+            if let snacksDetails = dayDetails!["Snacks"] as? NSDictionary {
+                var cost = 0.00
+                for keys in snacksDetails {
+                    let values = keys.value as? NSDictionary
+                    if let innerCost = values!["cost"] {
+                        cost += innerCost as! Double
+                    }
+                }
+                self.snacksLabel.text = self.replaceDollarVal(s: self.snacksLabel.text!, newDollarAmnt: cost)
+            } else {
+                self.snacksLabel.text = self.replaceDollarVal(s: self.snacksLabel.text!, newDollarAmnt: 0.0)
+            }
         }) { (error) in
             print(error.localizedDescription)
         }
