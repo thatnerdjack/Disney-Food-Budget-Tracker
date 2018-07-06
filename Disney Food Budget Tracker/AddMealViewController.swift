@@ -114,6 +114,10 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         return false
     }
     
+    @IBAction func addReceipt(_ sender: Any) {
+        //code
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addMealToDay" {
             let destination = segue.destination as! DayViewController
