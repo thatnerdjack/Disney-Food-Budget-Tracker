@@ -18,6 +18,7 @@
 		DA08A2A120E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 		DA08A2A220E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
 		DA08A2A320E449C600BA91EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */; };
+		DA37644920FA638D007BAC39 /* MealDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37644820FA638D007BAC39 /* MealDetailTableViewController.swift */; };
 		DA58BB3E20EFED00004B00E8 /* AttachmentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58BB3D20EFECFF004B00E8 /* AttachmentHandler.swift */; };
 		DA58BB3F20EFED00004B00E8 /* AttachmentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58BB3D20EFECFF004B00E8 /* AttachmentHandler.swift */; };
 		DA58BB4020EFED00004B00E8 /* AttachmentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA58BB3D20EFECFF004B00E8 /* AttachmentHandler.swift */; };
@@ -67,6 +68,7 @@
 		DA08A28E20E448EC00BA91EB /* Disney Food Budget TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Disney Food Budget TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA08A29420E448EC00BA91EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA08A2A020E449C600BA91EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA37644820FA638D007BAC39 /* MealDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailTableViewController.swift; sourceTree = "<group>"; };
 		DA58BB3D20EFECFF004B00E8 /* AttachmentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentHandler.swift; path = "../../../../../../Downloads/2b5066c488c38d8456678297b17e0bea-bd912c2186d732b82e19091e93a76496b2817941/AttachmentHandler.swift"; sourceTree = "<group>"; };
 		DA59209520E6C43600A0A043 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		DA59209720E6E17100A0A043 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
@@ -160,8 +162,9 @@
 				DA59209720E6E17100A0A043 /* TripViewController.swift */,
 				DADA8BC720E946AD008E59DC /* DayViewController.swift */,
 				DADA8BC920E95618008E59DC /* AddMealViewController.swift */,
-				DA58BB3D20EFECFF004B00E8 /* AttachmentHandler.swift */,
+				DA37644820FA638D007BAC39 /* MealDetailTableViewController.swift */,
 				DA08A27620E448EA00BA91EB /* Main.storyboard */,
+				DA58BB3D20EFECFF004B00E8 /* AttachmentHandler.swift */,
 				DA08A27920E448EC00BA91EB /* Assets.xcassets */,
 				DA08A27B20E448EC00BA91EB /* LaunchScreen.storyboard */,
 				DA08A27E20E448EC00BA91EB /* Info.plist */,
@@ -421,6 +424,7 @@
 			files = (
 				DA59209620E6C43600A0A043 /* DashboardTableViewController.swift in Sources */,
 				DA58BB3E20EFED00004B00E8 /* AttachmentHandler.swift in Sources */,
+				DA37644920FA638D007BAC39 /* MealDetailTableViewController.swift in Sources */,
 				DA59209820E6E17100A0A043 /* TripViewController.swift in Sources */,
 				DA08A27520E448EA00BA91EB /* ViewController.swift in Sources */,
 				DA08A27320E448EA00BA91EB /* AppDelegate.swift in Sources */,

@@ -323,8 +323,8 @@
                                     <action selector="hitDone:" destination="Cb7-bM-tr5" eventType="touchUpInside" id="gQV-S2-AWn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-Nw-WMV">
-                                <rect key="frame" x="271" y="428" width="84" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-Nw-WMV">
+                                <rect key="frame" x="20" y="428" width="335" height="30"/>
                                 <state key="normal" title="Add Receipt"/>
                                 <connections>
                                     <action selector="addReceipt:" destination="Cb7-bM-tr5" eventType="touchUpInside" id="IAY-6C-gcY"/>
@@ -339,6 +339,7 @@
                             <constraint firstItem="vLe-Nw-WMV" firstAttribute="trailing" secondItem="qMD-AN-kZG" secondAttribute="trailing" id="Qg3-92-8iO"/>
                             <constraint firstItem="qMD-AN-kZG" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="QnQ-0f-pOT"/>
                             <constraint firstItem="qMD-AN-kZG" firstAttribute="top" secondItem="Mo2-lB-xrK" secondAttribute="bottom" constant="30" id="RQH-f8-pWs"/>
+                            <constraint firstItem="vLe-Nw-WMV" firstAttribute="leading" secondItem="bdA-ZN-tjW" secondAttribute="leading" constant="20" id="UjA-4z-9jA"/>
                             <constraint firstItem="d3X-kj-Ltf" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="Upi-l6-f5E"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerY" secondItem="XjD-Tf-HJB" secondAttribute="centerY" id="Uta-5e-jrd"/>
                             <constraint firstItem="Mo2-lB-xrK" firstAttribute="centerX" secondItem="XjD-Tf-HJB" secondAttribute="centerX" id="WFq-X6-t6h"/>
@@ -353,6 +354,7 @@
                         <viewLayoutGuide key="safeArea" id="bdA-ZN-tjW"/>
                     </view>
                     <connections>
+                        <outlet property="addReceiptButton" destination="vLe-Nw-WMV" id="reS-9S-SEU"/>
                         <outlet property="costField" destination="qMD-AN-kZG" id="T2l-JO-kZn"/>
                         <outlet property="dateField" destination="d3X-kj-Ltf" id="aKe-53-d4H"/>
                         <outlet property="mealField" destination="Mo2-lB-xrK" id="Qcn-e7-53q"/>
@@ -361,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0k-s4-KtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4654" y="-623"/>
+            <point key="canvasLocation" x="4653.6000000000004" y="-623.83808095952031"/>
         </scene>
         <!--Day View Controller-->
         <scene sceneID="o8E-gK-hpB">
@@ -439,6 +441,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chg-jN-gTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5354" y="134"/>
+        </scene>
+        <!--Meal Detail Table View Controller-->
+        <scene sceneID="EyB-b4-zBG">
+            <objects>
+                <tableViewController id="2nE-fd-vlD" customClass="MealDetailTableViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LB4-w1-qTm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lMz-sM-JIW">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lMz-sM-JIW" id="Mio-6S-plL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2nE-fd-vlD" id="59N-gh-qgM"/>
+                            <outlet property="delegate" destination="2nE-fd-vlD" id="iO6-Ld-No1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBU-oA-eXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6269" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOH-U2-ECR">

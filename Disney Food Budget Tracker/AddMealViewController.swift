@@ -16,6 +16,7 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var mealField: UISegmentedControl!
     @IBOutlet weak var costField: UITextField!
+    @IBOutlet weak var addReceiptButton: UIButton!
     
     var datesArr: [String]!
     var pickerView: UIPickerView!
@@ -23,6 +24,7 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     var dateString: String!
     var mealString: String!
     var receiptUuid: String!
+    var didUploadReceipt = false
     
     let ref = Database.database().reference()
     let storageRef = Storage.storage().reference()
@@ -31,7 +33,7 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         super.viewDidLoad()
         setUpToolbar()
         
-        setuoPickerView()
+        setupPickerView()
         dateField.inputView = pickerView
         
         if datesArr.count == 1 {
@@ -39,8 +41,6 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             dateField.isEnabled = false
             dateString = datesArr[0]
         }
-
-        // Do any additional setup after loading the view.
     }
     
     func setUpToolbar() {
@@ -68,26 +68,10 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         // Dispose of any resources that can be recreated.
     }
     
-    func setuoPickerView() {
+    func setupPickerView() {
         pickerView = UIPickerView()
         pickerView.delegate = self
-        
-//        let toolbar = UIToolbar()
-//        toolbar.barStyle = .default
-//        toolbar.isTranslucent = true
-//        toolbar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
-//        toolbar.sizeToFit()
-//
-//        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneClick))
-//
-//        toolbar.setItems([doneButton], animated: false)
-//        toolbar.isUserInteractionEnabled = true
-//        dateField.inputAccessoryView = toolbar
     }
-    
-//    @objc func doneClick() {
-//        dateField.resignFirstResponder()
-//    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -141,6 +125,11 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     @IBAction func addReceipt(_ sender: Any) {
+        if didUploadReceipt {
+            self.storageRef.child("receipts/\(self.receiptUuid!).jpeg").delete { (error) in
+                print(error?.localizedDescription)
+            }
+        }
         AttachmentHandler.shared.showAttachmentActionSheet(vc: self)
         AttachmentHandler.shared.imagePickedBlock = { (image) in
             self.receiptUuid = UUID().uuidString
@@ -153,9 +142,10 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
             
             let _ = uploadTask.observe(.success, handler: { (snapshot) in
                 hud?.dismiss()
+                self.didUploadReceipt = true
             })
-            
         }
+        self.addReceiptButton.setTitle("Upload Different Receipt", for: .normal)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
