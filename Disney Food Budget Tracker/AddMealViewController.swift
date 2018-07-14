@@ -29,7 +29,7 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("datesArr: \(datesArr!)")
+        setUpToolbar()
         
         setuoPickerView()
         dateField.inputView = pickerView
@@ -42,16 +42,8 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func setuoPickerView() {
-        pickerView = UIPickerView()
-        pickerView.delegate = self
-        
+    func setUpToolbar() {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
         toolbar.isTranslucent = true
@@ -63,11 +55,39 @@ class AddMealViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         toolbar.setItems([doneButton], animated: false)
         toolbar.isUserInteractionEnabled = true
         dateField.inputAccessoryView = toolbar
+        costField.inputAccessoryView = toolbar
     }
     
     @objc func doneClick() {
         dateField.resignFirstResponder()
+        costField.resignFirstResponder()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func setuoPickerView() {
+        pickerView = UIPickerView()
+        pickerView.delegate = self
+        
+//        let toolbar = UIToolbar()
+//        toolbar.barStyle = .default
+//        toolbar.isTranslucent = true
+//        toolbar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+//        toolbar.sizeToFit()
+//
+//        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneClick))
+//
+//        toolbar.setItems([doneButton], animated: false)
+//        toolbar.isUserInteractionEnabled = true
+//        dateField.inputAccessoryView = toolbar
+    }
+    
+//    @objc func doneClick() {
+//        dateField.resignFirstResponder()
+//    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
