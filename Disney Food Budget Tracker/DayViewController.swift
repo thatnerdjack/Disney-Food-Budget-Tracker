@@ -23,6 +23,7 @@ class DayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(self.backToInitial(sender:)))
         
         dayLabel.text = dateString
         
@@ -84,6 +85,11 @@ class DayViewController: UIViewController {
             print(error.localizedDescription)
         }
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func backToInitial(sender: AnyObject) {
+        let vc = self.navigationController?.viewControllers.filter({$0 is TripViewController}).first
+        self.navigationController?.popToViewController(vc!, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
