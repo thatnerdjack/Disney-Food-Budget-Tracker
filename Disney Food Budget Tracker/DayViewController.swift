@@ -21,6 +21,8 @@ class DayViewController: UIViewController {
     var dateString: String!
     var ref = Database.database().reference()
     
+    var workingMealString: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(self.backToInitial(sender:)))
@@ -107,11 +109,37 @@ class DayViewController: UIViewController {
         return "\(mealString)$\(dollarFormatted)"
     }
     
+    @IBAction func hitBreakfastDetails(_ sender: Any) {
+        workingMealString = "Breakfast"
+        performSegue(withIdentifier: "dayToAddMeal", sender: nil)
+    }
+    
+    @IBAction func hitLunchDetails(_ sender: Any) {
+        workingMealString = "Lunch"
+        performSegue(withIdentifier: "dayToAddMeal", sender: nil)
+    }
+    
+    @IBAction func hitDinnerDetails(_ sender: Any) {
+        workingMealString = "Dinner"
+        performSegue(withIdentifier: "dayToAddMeal", sender: nil)
+    }
+    
+    @IBAction func hitSnackDetails(_ sender: Any) {
+        workingMealString = "Snacks"
+        performSegue(withIdentifier: "dayToAddMeal", sender: nil)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dayToAddMeal" {
             let destination = segue.destination as! AddMealViewController
             destination.datesArr = [dateString]
             destination.tripID = tripID
+        } else if segue.identifier == "dayToMealDetails" {
+            let destination = segue.destination as! MealDetailTableViewController
+            destination.tripID = tripID
+            destination.dateString = dateString
+            destination.mealString = workingMealString
         }
     }
 

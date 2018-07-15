@@ -415,21 +415,33 @@
                                 <rect key="frame" x="257" y="244" width="98" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="See Details"/>
+                                <connections>
+                                    <action selector="hitBreakfastDetails:" destination="yYd-mz-jAc" eventType="touchUpInside" id="JmM-xE-5Kh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRg-0I-YFt">
                                 <rect key="frame" x="257" y="341" width="98" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="See Details"/>
+                                <connections>
+                                    <action selector="hitDinnerDetails:" destination="yYd-mz-jAc" eventType="touchUpInside" id="145-Kc-fCc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE4-6W-cRw">
                                 <rect key="frame" x="257" y="390" width="98" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="See Details"/>
+                                <connections>
+                                    <action selector="hitSnackDetails:" destination="yYd-mz-jAc" eventType="touchUpInside" id="64N-mm-xHj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmw-lX-mOj">
                                 <rect key="frame" x="257" y="291" width="98" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="See Details"/>
+                                <connections>
+                                    <action selector="hitLunchDetails:" destination="yYd-mz-jAc" eventType="touchUpInside" id="PPn-Bo-Hvr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

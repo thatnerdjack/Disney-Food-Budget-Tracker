@@ -12,11 +12,11 @@ import FirebaseStorage
 
 class MealDetailTableViewController: UITableViewController {
     
-    let tripID: String!
-    let dateString: String!
-    let mealString: String!
-    let mealsAndCosts: Dictionary = [String:Double]()
-    let mealsAndReceiptIDs: Dictionary = [String:String]()
+    var tripID: String!
+    var dateString: String!
+    var mealString: String!
+    var mealsAndCosts: Dictionary = [String:Double]()
+    var mealsAndReceiptIDs: Dictionary = [String:String]()
     
     let ref = Database.database().reference()
 
@@ -28,11 +28,11 @@ class MealDetailTableViewController: UITableViewController {
             
             for keys in value! {
                 let entryID = keys.key
-                let cost = keys.value["cost"] as Double
-                let receipt = keys.value["receipt"] as? String ?? nil
+                let cost = (keys.value as! NSDictionary)["cost"] as! Double
+                let receipt = (keys.value as! NSDictionary)["receipt"] as? String ?? nil
                 
-                mealsAndCosts = [entryID:cost]
-                mealsAndReceiptIDs = [entryID:receipt]
+                self.mealsAndCosts = [entryID as! String:cost]
+                self.mealsAndReceiptIDs = [entryID as! String:receipt] as! Dictionary<String, String>
             }
         }) { (error) in
             print(error.localizedDescription)
