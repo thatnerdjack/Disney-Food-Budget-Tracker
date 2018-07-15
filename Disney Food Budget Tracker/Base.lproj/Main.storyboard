@@ -520,7 +520,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AI5-FG-uDd" kind="popoverPresentation" popoverAnchorView="lMz-sM-JIW" id="9Rk-xm-HdO">
+                                    <segue destination="AI5-FG-uDd" kind="popoverPresentation" identifier="mealDeatilToReceipt" popoverAnchorView="lMz-sM-JIW" id="9Rk-xm-HdO">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -558,6 +558,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jnc-ca-Dwx"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="VwP-di-tb0" id="02Z-Gv-mZk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOs-tU-8Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

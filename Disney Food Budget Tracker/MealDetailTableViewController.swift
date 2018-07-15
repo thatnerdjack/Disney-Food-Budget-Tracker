@@ -15,6 +15,7 @@ class MealDetailTableViewController: UITableViewController {
     var tripID: String!
     var dateString: String!
     var mealString: String!
+    var workingReceiptID: String!
     var mealsAndCosts: Dictionary = [String:Double]()
     var mealsAndReceiptIDs: Dictionary = [String:String]()
     
@@ -64,25 +65,26 @@ class MealDetailTableViewController: UITableViewController {
 
         return cell
     }
-
-//    // Override to support editing the table view.
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mealID = tableView.cellForRow(at: indexPath)?.textLabel?.text
+        workingReceiptID = mealsAndReceiptIDs[mealID!]
+        
+        if workingReceiptID == nil {
+            let alert = UIAlertController(title: "Error", message: "No Receipt Added for this entry", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(okButton)
+            alert.show(self, sender: nil)
+        } else {
+            performSegue(withIdentifier: "mealDetailToReceipt", sender: self)
+        }
     }
-    */
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mealDeatilToReceipt" {
+            let dest = segue.destination
+            dest.receiptID = workingReceiptID
+        }
+    }
 
 }

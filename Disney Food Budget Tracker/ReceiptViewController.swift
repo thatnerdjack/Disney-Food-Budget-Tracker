@@ -7,29 +7,37 @@
 //
 
 import UIKit
+import FirebaseStorage
+import JGProgressHUD
 
 class ReceiptViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var receiptID: String!
+    let hud = JGProgressHUD(style: .dark)
+    
+    let storageRef = Storage.storage().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hud?.textLabel.text = "Downloading"
+        hud?.show(in: view)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let downloadTask = storageRef.child("receipts/\(receiptID)").getData(maxSize: Int64.max) { (data, error) in
+            self.imageView.image = UIImage(data: data!)
+        }
+        
+        downloadTask.observe(.success) { (snapshot) in
+            self.hud?.dismiss()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
