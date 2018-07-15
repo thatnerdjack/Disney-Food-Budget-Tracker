@@ -519,6 +519,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="AI5-FG-uDd" kind="popoverPresentation" popoverAnchorView="lMz-sM-JIW" id="9Rk-xm-HdO">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -530,6 +535,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBU-oA-eXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6269" y="131"/>
+        </scene>
+        <!--Receipt View Controller-->
+        <scene sceneID="qwg-ph-8xJ">
+            <objects>
+                <viewController id="AI5-FG-uDd" customClass="ReceiptViewController" customModule="Disney_Food_Budget_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3s7-ek-bL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-di-tb0">
+                                <rect key="frame" x="10" y="30" width="355" height="627"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VwP-di-tb0" firstAttribute="top" secondItem="jnc-ca-Dwx" secondAttribute="top" constant="10" id="6kf-2V-2Dx"/>
+                            <constraint firstItem="VwP-di-tb0" firstAttribute="leading" secondItem="jnc-ca-Dwx" secondAttribute="leading" constant="10" id="OCH-Kn-hD0"/>
+                            <constraint firstItem="jnc-ca-Dwx" firstAttribute="trailing" secondItem="VwP-di-tb0" secondAttribute="trailing" constant="10" id="PqI-F8-dcY"/>
+                            <constraint firstItem="jnc-ca-Dwx" firstAttribute="bottom" secondItem="VwP-di-tb0" secondAttribute="bottom" constant="10" id="UrZ-sa-Llf"/>
+                            <constraint firstItem="VwP-di-tb0" firstAttribute="centerX" secondItem="3s7-ek-bL0" secondAttribute="centerX" id="iq4-yQ-ORa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jnc-ca-Dwx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gOs-tU-8Ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7247" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOH-U2-ECR">
