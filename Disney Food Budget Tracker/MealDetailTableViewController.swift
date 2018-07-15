@@ -79,6 +79,32 @@ class MealDetailTableViewController: UITableViewController {
             performSegue(withIdentifier: "mealDetailToReceipt", sender: self)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            confirmTripDelete(tripName: (tableView.cellForRow(at: indexPath)?.textLabel?.text)!)
+        }
+    }
+    
+    func confirmTripDelete(entryID: String) {
+        let alert = UIAlertController(title: "Please confirm.", message: "Are you sure you want to delete this entry?", preferredStyle: .alert)
+        
+        //need ok and delete and then execute action
+        mealsAndCosts.remove(at: mealsAndCosts.index(forKey: entryID))
+        mealsAndReceiptIDs.remove(at: mealsAndReceiptIDs.index(forKey: entryID))
+        ref.child("trips/\(tripID!)/dates/\(mealString!)/\(entryID)").removeValue()
+        self.tableView.reloadData()
+    }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        
+        self.present(alert, animated: true)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mealDeatilToReceipt" {
